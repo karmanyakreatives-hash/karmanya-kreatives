@@ -9,18 +9,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="md:col-span-1">
-            <div className="flex flex-col leading-none mb-4">
+            <div className="leading-none mb-4">
               <span
-                className="text-2xl font-light tracking-[0.15em] gold-shimmer"
+                className="text-2xl font-light tracking-[0.2em] gold-shimmer uppercase"
                 style={{ fontFamily: "var(--font-cormorant)" }}
               >
-                KARMANYA
-              </span>
-              <span
-                className="text-xs tracking-[0.5em] text-[#d4a017]/70 uppercase mt-0.5"
-                style={{ fontFamily: "var(--font-montserrat)" }}
-              >
-                Kreatives
+                KARMANYA KREATIVES
               </span>
             </div>
             <p

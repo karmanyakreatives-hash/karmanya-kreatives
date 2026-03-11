@@ -41,18 +41,12 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex flex-col leading-none group">
+          <Link href="/" className="leading-none group">
             <span
-              className="text-2xl font-light tracking-[0.15em] gold-shimmer"
+              className="text-2xl font-light tracking-[0.2em] gold-shimmer uppercase"
               style={{ fontFamily: "var(--font-cormorant)" }}
             >
-              KARMANYA
-            </span>
-            <span
-              className="text-xs tracking-[0.5em] text-[#d4a017]/70 uppercase mt-0.5"
-              style={{ fontFamily: "var(--font-montserrat)" }}
-            >
-              Kreatives
+              KARMANYA KREATIVES
             </span>
           </Link>
 
