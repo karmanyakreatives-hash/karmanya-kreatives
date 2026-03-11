@@ -97,8 +97,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-[#faf7f0]/30 text-xs tracking-widest uppercase mb-1" style={{ fontFamily: "var(--font-montserrat)" }}>Location</p>
-                    <p className="text-[#faf7f0]/70 text-sm" style={{ fontFamily: "var(--font-montserrat)" }}>Mumbai, Maharashtra, India</p>
-                    <p className="text-[#faf7f0]/30 text-xs mt-1" style={{ fontFamily: "var(--font-montserrat)" }}>Serving pan-India & destination events</p>
+                    <p className="text-[#faf7f0]/70 text-sm" style={{ fontFamily: "var(--font-montserrat)" }}>San Francisco Bay Area, CA</p>
+                    <p className="text-[#faf7f0]/30 text-xs mt-1" style={{ fontFamily: "var(--font-montserrat)" }}>Serving the Bay Area & destination events</p>
                   </div>
                 </div>
               </div>

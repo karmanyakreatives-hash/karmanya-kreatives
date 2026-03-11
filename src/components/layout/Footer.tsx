@@ -133,7 +133,7 @@ export default function Footer() {
                   className="text-[#faf7f0]/50 text-sm"
                   style={{ fontFamily: "var(--font-montserrat)" }}
                 >
-                  Mumbai, Maharashtra, India
+                  San Francisco Bay Area, CA
                 </span>
               </li>
             </ul>
