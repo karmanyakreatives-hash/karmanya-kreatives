@@ -41,12 +41,18 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="leading-none group">
+          <Link href="/" className="leading-none group flex flex-col items-start">
             <span
-              className="text-2xl font-light tracking-[0.2em] gold-shimmer uppercase"
-              style={{ fontFamily: "var(--font-cormorant)" }}
+              className="text-3xl md:text-4xl font-semibold tracking-[0.25em] gold-shimmer uppercase"
+              style={{ fontFamily: "var(--font-cormorant)", letterSpacing: "0.2em" }}
             >
               KARMANYA KREATIVES
+            </span>
+            <span
+              className="text-[8px] tracking-[0.55em] uppercase text-[#d4a017]/60 mt-0.5 ml-0.5"
+              style={{ fontFamily: "var(--font-montserrat)" }}
+            >
+              ✦ Event Decor Management ✦
             </span>
           </Link>
 

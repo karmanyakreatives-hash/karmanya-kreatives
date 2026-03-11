@@ -51,7 +51,7 @@ export default function HomePage() {
               className="text-[#d4a017] text-xs tracking-[0.4em] uppercase"
               style={{ fontFamily: "var(--font-montserrat)" }}
             >
-              Premium Event Decor
+              Event Decor Management
             </span>
             <div className="h-px w-12 bg-[#d4a017]/60" />
           </motion.div>
