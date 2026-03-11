@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(echo $PATH)",
+      "Read(//usr/local/bin/**)",
+      "Bash(export PATH=\"/Users/mybubu/.nvm/versions/node/v24.14.0/bin:$PATH\" && cd \"/Users/mybubu/Desktop/Karmanya Kreatives Website\" && npx create-next-app@latest . --typescript --tailwind --app --src-dir --no-eslint --import-alias \"@/*\" --yes --name karmanya-kreatives 2>&1)",
+      "Bash(export PATH=\"/Users/mybubu/.nvm/versions/node/v24.14.0/bin:$PATH\")",
+      "Bash(mkdir -p \"/Users/mybubu/Desktop/kk-temp\")",
+      "Read(//Users/mybubu/Desktop/**)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --app --src-dir --no-eslint --import-alias \"@/*\" --yes)",
+      "Bash(export PATH=\"/Users/mybubu/.nvm/versions/node/v24.14.0/bin:$PATH\" && cp -r \"/Users/mybubu/Desktop/kk-temp/.\" \"/Users/mybubu/Desktop/Karmanya Kreatives Website/\" && rm -rf \"/Users/mybubu/Desktop/kk-temp\" && ls \"/Users/mybubu/Desktop/Karmanya Kreatives Website\")",
+      "Bash(export PATH=\"/Users/mybubu/.nvm/versions/node/v24.14.0/bin:$PATH\" && cd \"/Users/mybubu/Desktop/Karmanya Kreatives Website\" && npm install framer-motion lucide-react 2>&1)",
+      "Bash(export PATH=\"/Users/mybubu/.nvm/versions/node/v24.14.0/bin:$PATH\" && cd \"/Users/mybubu/Desktop/Karmanya Kreatives Website\" && npm run build 2>&1)",
+      "Bash(export PATH=\"/Users/mybubu/.nvm/versions/node/v24.14.0/bin:$PATH\" && cd \"/Users/mybubu/Desktop/Karmanya Kreatives Website\" && rm -rf node_modules package-lock.json && npm install 2>&1 | tail -10)",
+      "Bash(export PATH=\"/Users/mybubu/.nvm/versions/node/v24.14.0/bin:/bin:/usr/bin:$PATH\" && cd \"/Users/mybubu/Desktop/Karmanya Kreatives Website\" && rm -rf node_modules package-lock.json && npm install 2>&1 | tail -15)",
+      "Bash(export PATH=\"/Users/mybubu/.nvm/versions/node/v24.14.0/bin:/bin:/usr/bin:$PATH\" && cd \"/Users/mybubu/Desktop/Karmanya Kreatives Website\" && npm run build 2>&1)"
+    ]
+  }
+}
