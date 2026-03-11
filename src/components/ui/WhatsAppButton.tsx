@@ -51,9 +51,9 @@ export default function WhatsAppButton() {
         href={`https://wa.me/${WHATSAPP_NUMBER}?text=${MESSAGE}`}
         target="_blank"
         rel="noopener noreferrer"
-        initial={{ scale: 0, opacity: 0 }}
+        initial={{ scale: 1, opacity: 1 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 1.5, duration: 0.4, type: "spring" }}
+        transition={{ duration: 0.4 }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         onMouseEnter={() => setShowTooltip(true)}
