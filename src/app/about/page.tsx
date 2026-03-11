@@ -56,7 +56,7 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-5 text-[#faf7f0]/50 leading-relaxed" style={{ fontFamily: "var(--font-montserrat)", fontSize: "0.9rem" }}>
               <p>
-                Karmanya Kreatives began in 2016 as a small floral studio in Mumbai, driven by
+                Karmanya Kreatives began in 2016 as a small floral studio in the Bay Area, driven by
                 one belief: that every celebration deserves to be extraordinary. What started as
                 weekend weddings soon grew into a full-service luxury event decor studio trusted
                 by families across the city.
@@ -79,7 +79,7 @@ export default function AboutPage() {
                 <div className="text-center px-8">
                   <div className="text-7xl mb-6">🌸</div>
                   <p className="text-[#d4a017] text-sm tracking-[0.3em] uppercase" style={{ fontFamily: "var(--font-montserrat)" }}>Est. 2016</p>
-                  <p className="text-[#faf7f0]/30 text-sm mt-2" style={{ fontFamily: "var(--font-cormorant)" }}>Mumbai, Maharashtra</p>
+                  <p className="text-[#faf7f0]/30 text-sm mt-2" style={{ fontFamily: "var(--font-cormorant)" }}>San Francisco Bay Area, CA</p>
                 </div>
               </div>
               <div className="absolute -top-4 -right-4 w-full h-full border border-[#d4a017]/20 pointer-events-none" />

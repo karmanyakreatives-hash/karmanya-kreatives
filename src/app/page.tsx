@@ -176,7 +176,7 @@ export default function HomePage() {
             <p className="text-[#faf7f0]/50 leading-relaxed mb-4" style={{ fontFamily: "var(--font-montserrat)", fontSize: "0.9rem" }}>
               Karmanya Kreatives was born from a deep passion for transforming ordinary spaces
               into extraordinary experiences. For over 8 years, we&apos;ve been the secret behind
-              Mumbai&apos;s most talked-about celebrations.
+              Bay Area&apos;s most talked-about celebrations.
             </p>
             <p className="text-[#faf7f0]/50 leading-relaxed mb-8" style={{ fontFamily: "var(--font-montserrat)", fontSize: "0.9rem" }}>
               Every event we design is a unique narrative — told through flowers, light, fabric,
