@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -41,19 +42,43 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="leading-none group flex flex-col items-start">
-            <span
-              className="text-3xl md:text-4xl font-semibold tracking-[0.25em] gold-shimmer uppercase"
-              style={{ fontFamily: "var(--font-cormorant)", letterSpacing: "0.2em" }}
+          <Link href="/" className="leading-none group flex items-center gap-4">
+            <motion.div
+              animate={{
+                scale: [1, 1.04, 1],
+                boxShadow: [
+                  "0 0 10px rgba(212,160,23,0.3)",
+                  "0 0 25px rgba(212,160,23,0.7)",
+                  "0 0 10px rgba(212,160,23,0.3)",
+                ],
+              }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              whileHover={{ scale: 1.1, rotate: 360, transition: { duration: 0.8 } }}
+              className="w-[90px] h-[90px] rounded-full border-2 border-[#d4a017] overflow-hidden shrink-0 bg-black flex items-center justify-center cursor-pointer"
             >
-              KARMANYA KREATIVES
-            </span>
-            <span
-              className="text-[8px] tracking-[0.55em] uppercase text-[#d4a017]/60 mt-0.5 ml-0.5"
-              style={{ fontFamily: "var(--font-montserrat)" }}
-            >
-              ✦ Event Decor Management ✦
-            </span>
+              <Image
+                src="/Logo_upscayl.png"
+                alt="Karmanya Kreatives Logo"
+                width={90}
+                height={90}
+                className="object-cover w-full h-full scale-125 translate-y-2 -translate-x-1"
+                priority
+              />
+            </motion.div>
+            <div className="flex flex-col justify-center">
+              <span
+                className="text-2xl md:text-3xl font-semibold gold-shimmer uppercase leading-tight"
+                style={{ fontFamily: "var(--font-cormorant)", letterSpacing: "0.18em" }}
+              >
+                KARMANYA KREATIVES
+              </span>
+              <span
+                className="text-[8px] tracking-[0.45em] uppercase text-[#d4a017]/60 mt-1"
+                style={{ fontFamily: "var(--font-montserrat)" }}
+              >
+                ✦ Event Decor Management ✦
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}

@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ArrowRight, ChevronDown, Star } from "lucide-react";
 import { fadeUp, fadeIn, staggerContainer, scaleIn, fadeLeft, fadeRight } from "@/lib/animations";
 import { STATS, SERVICES, TESTIMONIALS, THEMES } from "@/lib/constants";
+import InstagramFeed from "@/components/sections/InstagramFeed";
 
 export default function HomePage() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -36,7 +37,7 @@ export default function HomePage() {
           />
         </div>
 
-        <motion.div
+<motion.div
           style={{ opacity: heroOpacity }}
           className="relative z-10 text-center px-6 max-w-5xl mx-auto"
         >
@@ -368,6 +369,9 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
+
+      {/* ── INSTAGRAM FEED ─────────────────────────────────────── */}
+      <InstagramFeed />
 
       {/* ── CTA BANNER ─────────────────────────────────────────── */}
       <section className="py-24 relative overflow-hidden">

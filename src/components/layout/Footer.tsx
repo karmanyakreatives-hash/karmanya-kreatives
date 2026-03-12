@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Instagram, Facebook, Mail, Phone, MapPin } from "lucide-react";
 import { NAV_LINKS } from "@/lib/constants";
 
@@ -9,19 +10,30 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="md:col-span-1">
-            <div className="leading-none mb-4 flex flex-col items-start">
-              <span
-                className="text-3xl font-semibold tracking-[0.2em] gold-shimmer uppercase"
-                style={{ fontFamily: "var(--font-cormorant)" }}
-              >
-                KARMANYA KREATIVES
-              </span>
-              <span
-                className="text-[8px] tracking-[0.55em] uppercase text-[#d4a017]/60 mt-0.5 ml-0.5"
-                style={{ fontFamily: "var(--font-montserrat)" }}
-              >
-                ✦ Event Decor Management ✦
-              </span>
+            <div className="leading-none mb-4 flex items-center gap-3">
+              <div className="w-[90px] h-[90px] rounded-full border-2 border-[#d4a017] overflow-hidden shrink-0 shadow-[0_0_15px_rgba(212,160,23,0.3)] bg-black flex items-center justify-center">
+                <Image
+                  src="/Logo_upscayl.png"
+                  alt="Karmanya Kreatives Logo"
+                  width={90}
+                  height={90}
+                  className="object-cover w-full h-full scale-125 translate-y-2 -translate-x-1"
+                />
+              </div>
+              <div className="flex flex-col items-start">
+                <span
+                  className="text-3xl font-semibold tracking-[0.2em] gold-shimmer uppercase"
+                  style={{ fontFamily: "var(--font-cormorant)" }}
+                >
+                  KARMANYA KREATIVES
+                </span>
+                <span
+                  className="text-[8px] tracking-[0.55em] uppercase text-[#d4a017]/60 mt-0.5 ml-0.5"
+                  style={{ fontFamily: "var(--font-montserrat)" }}
+                >
+                  ✦ Event Decor Management ✦
+                </span>
+              </div>
             </div>
             <p
               className="text-[#faf7f0]/50 text-sm leading-relaxed mb-6"
