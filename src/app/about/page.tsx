@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { fadeUp, fadeLeft, fadeRight, staggerContainer, scaleIn } from "@/lib/animations";
 import { STATS } from "@/lib/constants";
@@ -14,9 +15,7 @@ const VALUES = [
 ];
 
 const TEAM = [
-  { name: "Karmanya Sharma", role: "Founder & Creative Director", bio: "With a background in fine arts and 10+ years in luxury event design, Karmanya founded the studio with a singular vision: to make every event a living work of art." },
-  { name: "Riya Mehta", role: "Lead Event Stylist", bio: "Riya's eye for detail and passion for florals has made her the creative force behind some of our most iconic wedding installations." },
-  { name: "Arjun Nair", role: "Lighting & Ambience Designer", bio: "Arjun transforms any space through the magic of light — from dramatic spotlights to ethereal fairy-light canopies, he sets the perfect mood." },
+  { name: "HIMA BINDU", role: "Founder & Creative Director", bio: "The heart and soul behind Karmanya Kreatives. With a deep passion for design, florals, and celebrating life's most beautiful moments, Hima Bindu transforms every event into a breathtaking work of art — one detail at a time." },
 ];
 
 export default function AboutPage() {
@@ -50,25 +49,22 @@ export default function AboutPage() {
       <section className="section-padding max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <motion.div variants={fadeLeft} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-            <h2 className="text-4xl md:text-5xl font-light text-[#faf7f0] leading-tight mb-8" style={{ fontFamily: "var(--font-cormorant)" }}>
+            <h2 className="text-4xl md:text-5xl font-light text-[#faf7f0] leading-tight mb-12" style={{ fontFamily: "var(--font-cormorant)" }}>
               Born from a Passion
               <br /><span className="italic gold-text">for Beauty</span>
             </h2>
-            <div className="space-y-5 text-[#faf7f0]/50 leading-relaxed" style={{ fontFamily: "var(--font-montserrat)", fontSize: "0.9rem" }}>
-              <p>
-                Karmanya Kreatives began in 2016 as a small floral studio in the Bay Area, driven by
-                one belief: that every celebration deserves to be extraordinary. What started as
-                weekend weddings soon grew into a full-service luxury event decor studio trusted
-                by families across the city.
+            <div className="space-y-6 leading-relaxed">
+              <p className="text-[#faf7f0]/60 leading-relaxed" style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.2rem" }}>
+                <span className="text-[#d4a017] font-semibold gold-shimmer" style={{ fontSize: "1.2rem" }}>Karmanya Kreatives</span> was born from one simple belief — every celebration deserves to be extraordinary.
+                Since 2025, we&apos;ve been crafting the Bay Area&apos;s most breathtaking events, weaving together
+                flowers, light, fabric, and the finest details into moments that truly take your breath away.
               </p>
-              <p>
-                Over eight years, we&apos;ve curated over 500 events — from intimate 20-person
-                dinner parties to grand weddings with over 1,000 guests. Each one received the
-                same level of care, creativity, and white-glove attention.
+              <p className="text-[#faf7f0]/60 leading-relaxed" style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.2rem" }}>
+                Every event we design is uniquely yours — thoughtfully curated, beautifully executed, and crafted
+                with a passion for perfection that shows in every detail.
               </p>
-              <p>
-                Today, Karmanya Kreatives is synonymous with refined taste, flawless execution,
-                and the kind of magic that makes guests stop, breathe, and feel something.
+              <p className="italic gold-text" style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.6rem" }}>
+                Because your story deserves to be told beautifully.
               </p>
             </div>
           </motion.div>
@@ -77,9 +73,21 @@ export default function AboutPage() {
             <div className="relative h-[500px]">
               <div className="absolute inset-0 bg-[#161616] border border-[#d4a017]/20 flex items-center justify-center">
                 <div className="text-center px-8">
-                  <div className="text-7xl mb-6">🌸</div>
-                  <p className="text-[#d4a017] text-sm tracking-[0.3em] uppercase" style={{ fontFamily: "var(--font-montserrat)" }}>Est. 2016</p>
-                  <p className="text-[#faf7f0]/30 text-sm mt-2" style={{ fontFamily: "var(--font-cormorant)" }}>San Francisco Bay Area, CA</p>
+                  <motion.div
+                    className="w-[300px] h-[300px] mx-auto mb-6"
+                    animate={{ y: [0, -15, 0] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    <Image
+                      src="/Logo_upscayl.png"
+                      alt="Karmanya Kreatives Logo"
+                      width={300}
+                      height={300}
+                      className="w-full h-full object-contain"
+                    />
+                  </motion.div>
+                  <p className="text-[#faf7f0]/60 text-2xl italic mb-4" style={{ fontFamily: "var(--font-cormorant)" }}>Art with <span className="text-[#d4a017]">Love</span></p>
+                  <p className="text-[#faf7f0]/30 text-sm" style={{ fontFamily: "var(--font-cormorant)" }}>San Francisco Bay Area, CA</p>
                 </div>
               </div>
               <div className="absolute -top-4 -right-4 w-full h-full border border-[#d4a017]/20 pointer-events-none" />
@@ -148,9 +156,9 @@ export default function AboutPage() {
       <section className="section-padding bg-[#0a0a0a]">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-16">
-            <p className="text-[#d4a017] text-xs tracking-[0.4em] uppercase mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>The Creatives</p>
+            <p className="text-[#d4a017] text-xs tracking-[0.4em] uppercase mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>The Creative Behind It All</p>
             <h2 className="text-5xl md:text-6xl font-light text-[#faf7f0]" style={{ fontFamily: "var(--font-cormorant)" }}>
-              Meet the <span className="italic gold-text">Team</span>
+              Meet the <span className="italic gold-text">Founder</span>
             </h2>
           </motion.div>
 
@@ -159,12 +167,18 @@ export default function AboutPage() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            className="flex justify-center"
           >
             {TEAM.map((member) => (
-              <motion.div key={member.name} variants={fadeUp} className="group text-center">
-                <div className="w-full h-64 bg-[#161616] border border-[#d4a017]/15 group-hover:border-[#d4a017]/40 transition-all duration-300 mb-6 flex items-center justify-center">
-                  <div className="text-5xl">👤</div>
+              <motion.div key={member.name} variants={fadeUp} className="group text-center w-full max-w-sm">
+                <div className="w-full h-80 border border-[#d4a017]/15 group-hover:border-[#d4a017]/40 transition-all duration-300 mb-6 overflow-hidden">
+                  <Image
+                    src="/Founder.JPG"
+                    alt="Hima Bindu — Founder"
+                    width={400}
+                    height={320}
+                    className="w-full h-full object-cover object-top"
+                  />
                 </div>
                 <h3 className="text-2xl font-light text-[#faf7f0] mb-1" style={{ fontFamily: "var(--font-cormorant)" }}>
                   {member.name}
