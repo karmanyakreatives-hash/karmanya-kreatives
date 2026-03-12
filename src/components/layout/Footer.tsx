@@ -17,7 +17,7 @@ export default function Footer() {
                   alt="Karmanya Kreatives Logo"
                   width={90}
                   height={90}
-                  className="object-cover w-full h-full scale-125 translate-y-2 -translate-x-1"
+                  className="w-full h-full" style={{ objectFit: "cover", objectPosition: "40% 35%", transform: "scale(1.2)" }}
                 />
               </div>
               <div className="flex flex-col items-start">

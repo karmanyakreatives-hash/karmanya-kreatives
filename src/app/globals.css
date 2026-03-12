@@ -94,6 +94,23 @@ body {
   background: linear-gradient(90deg, transparent, #d4a017, transparent);
 }
 
+/* Behold Instagram widget centering */
+behold-widget {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+behold-widget .behold-feed {
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+behold-widget img {
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
 /* Section padding */
 .section-padding {
   padding: 6rem 1.5rem;
