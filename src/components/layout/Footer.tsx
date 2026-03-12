@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Instagram, Facebook, Mail, Phone, MapPin } from "lucide-react";
+import { Instagram, Mail, Phone, MapPin } from "lucide-react";
 import { NAV_LINKS } from "@/lib/constants";
 
 export default function Footer() {
@@ -48,13 +48,6 @@ export default function Footer() {
                 aria-label="Instagram"
               >
                 <Instagram size={15} />
-              </a>
-              <a
-                href="#"
-                className="w-9 h-9 border border-[#d4a017]/30 flex items-center justify-center text-[#d4a017]/60 hover:border-[#d4a017] hover:text-[#d4a017] transition-all duration-300"
-                aria-label="Facebook"
-              >
-                <Facebook size={15} />
               </a>
               <a
                 href="mailto:karmanyakreatives@gmail.com"
@@ -127,7 +120,7 @@ export default function Footer() {
                   className="text-[#faf7f0]/50 text-sm"
                   style={{ fontFamily: "var(--font-montserrat)" }}
                 >
-                  425-469-0660 / 571-421-4321
+                  +1 (425) 469-0660 / +1 (571) 421-4321
                 </span>
               </li>
               <li className="flex items-start gap-3">

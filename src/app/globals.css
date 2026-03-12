@@ -111,6 +111,12 @@ behold-widget img {
   object-position: center center !important;
 }
 
+/* Marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
 /* Section padding */
 .section-padding {
   padding: 6rem 1.5rem;

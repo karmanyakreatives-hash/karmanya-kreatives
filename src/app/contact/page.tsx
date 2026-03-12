@@ -2,8 +2,9 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Phone, Mail, MapPin, Instagram, Facebook, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram, Send, Loader2 } from "lucide-react";
 import { fadeUp, fadeLeft, fadeRight, staggerContainer } from "@/lib/animations";
+import emailjs from "@emailjs/browser";
 
 const EVENT_TYPES = ["Wedding", "Birthday", "Anniversary", "Corporate Event", "Baby Shower", "Engagement", "Other"];
 
@@ -14,19 +15,47 @@ export default function ContactPage() {
     phone: "",
     eventType: "",
     eventDate: "",
+    venue: "",
     guestCount: "",
     budget: "",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+
+    try {
+      await emailjs.send(
+        "service_xx6lgdl",
+        "template_nz193v1",
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          event_type: formData.eventType,
+          event_date: formData.eventDate,
+          venue: formData.venue,
+          guest_count: formData.guestCount,
+          budget: formData.budget,
+          message: formData.message,
+        },
+        "7zDxlwiIsKpfSPPWp"
+      );
+      setSubmitted(true);
+    } catch {
+      setError("Something went wrong. Please try again or email us directly.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -72,14 +101,14 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-8">
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 border border-[#d4a017]/30 flex items-center justify-center shrink-0">
                     <Phone size={14} className="text-[#d4a017]" />
                   </div>
                   <div>
                     <p className="text-[#faf7f0]/30 text-xs tracking-widest uppercase mb-1" style={{ fontFamily: "var(--font-montserrat)" }}>Phone</p>
-                    <p className="text-[#faf7f0]/70 text-sm" style={{ fontFamily: "var(--font-montserrat)" }}>425-469-0660 / 571-421-4321</p>
+                    <p className="text-[#faf7f0]/70 text-sm" style={{ fontFamily: "var(--font-montserrat)" }}>+1 (425) 469-0660 / +1 (571) 421-4321</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -110,9 +139,6 @@ export default function ContactPage() {
                 <div className="flex gap-3">
                   <a href="#" className="w-10 h-10 border border-[#d4a017]/30 flex items-center justify-center text-[#d4a017]/60 hover:border-[#d4a017] hover:text-[#d4a017] transition-all duration-300" aria-label="Instagram">
                     <Instagram size={14} />
-                  </a>
-                  <a href="#" className="w-10 h-10 border border-[#d4a017]/30 flex items-center justify-center text-[#d4a017]/60 hover:border-[#d4a017] hover:text-[#d4a017] transition-all duration-300" aria-label="Facebook">
-                    <Facebook size={14} />
                   </a>
                 </div>
               </div>
@@ -151,153 +177,111 @@ export default function ContactPage() {
                   </p>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  {/* Name + Email */}
+                <form onSubmit={handleSubmit} className="space-y-8">
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-xs tracking-[0.2em] uppercase text-[#faf7f0]/40 mb-2" style={{ fontFamily: "var(--font-montserrat)" }}>
-                        Full Name *
-                      </label>
-                      <input
-                        type="text"
-                        name="name"
-                        required
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="w-full bg-[#161616] border border-[#d4a017]/20 text-[#faf7f0] px-4 py-3 text-sm focus:outline-none focus:border-[#d4a017] transition-colors duration-300"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                        placeholder="Your name"
-                      />
+                      <label className="block text-sm tracking-[0.15em] uppercase text-[#d4a017]/80 mb-3 font-medium" style={{ fontFamily: "var(--font-montserrat)" }}>Full Name *</label>
+                      <input type="text" name="name" required value={formData.name} onChange={handleChange}
+                        className="w-full bg-[#161616] border border-[#d4a017]/20 text-[#faf7f0] px-5 py-4 text-base focus:outline-none focus:border-[#d4a017] transition-colors duration-300"
+                        style={{ fontFamily: "var(--font-montserrat)" }} placeholder="Your full name" />
                     </div>
                     <div>
-                      <label className="block text-xs tracking-[0.2em] uppercase text-[#faf7f0]/40 mb-2" style={{ fontFamily: "var(--font-montserrat)" }}>
-                        Email Address *
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        required
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="w-full bg-[#161616] border border-[#d4a017]/20 text-[#faf7f0] px-4 py-3 text-sm focus:outline-none focus:border-[#d4a017] transition-colors duration-300"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                        placeholder="your@email.com"
-                      />
+                      <label className="block text-sm tracking-[0.15em] uppercase text-[#d4a017]/80 mb-3 font-medium" style={{ fontFamily: "var(--font-montserrat)" }}>Email Address *</label>
+                      <input type="email" name="email" required value={formData.email} onChange={handleChange}
+                        className="w-full bg-[#161616] border border-[#d4a017]/20 text-[#faf7f0] px-5 py-4 text-base focus:outline-none focus:border-[#d4a017] transition-colors duration-300"
+                        style={{ fontFamily: "var(--font-montserrat)" }} placeholder="your@email.com" />
                     </div>
                   </div>
 
-                  {/* Phone + Event Type */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-xs tracking-[0.2em] uppercase text-[#faf7f0]/40 mb-2" style={{ fontFamily: "var(--font-montserrat)" }}>
-                        Phone Number
-                      </label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="w-full bg-[#161616] border border-[#d4a017]/20 text-[#faf7f0] px-4 py-3 text-sm focus:outline-none focus:border-[#d4a017] transition-colors duration-300"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                        placeholder="+91 XXXXX XXXXX"
-                      />
+                      <label className="block text-sm tracking-[0.15em] uppercase text-[#d4a017]/80 mb-3 font-medium" style={{ fontFamily: "var(--font-montserrat)" }}>Phone Number</label>
+                      <input type="tel" name="phone" value={formData.phone} onChange={handleChange}
+                        className="w-full bg-[#161616] border border-[#d4a017]/20 text-[#faf7f0] px-5 py-4 text-base focus:outline-none focus:border-[#d4a017] transition-colors duration-300"
+                        style={{ fontFamily: "var(--font-montserrat)" }} placeholder="+1 (XXX) XXX-XXXX" />
                     </div>
                     <div>
-                      <label className="block text-xs tracking-[0.2em] uppercase text-[#faf7f0]/40 mb-2" style={{ fontFamily: "var(--font-montserrat)" }}>
-                        Event Type *
-                      </label>
-                      <select
-                        name="eventType"
-                        required
-                        value={formData.eventType}
-                        onChange={handleChange}
-                        className="w-full bg-[#161616] border border-[#d4a017]/20 text-[#faf7f0]/70 px-4 py-3 text-sm focus:outline-none focus:border-[#d4a017] transition-colors duration-300"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                      >
-                        <option value="">Select event type</option>
+                      <label className="block text-sm tracking-[0.15em] uppercase text-[#d4a017]/80 mb-3 font-medium" style={{ fontFamily: "var(--font-montserrat)" }}>Event Type *</label>
+                      <select name="eventType" required value={formData.eventType} onChange={handleChange}
+                        className="w-full bg-[#161616] border border-[#d4a017]/20 text-[#faf7f0]/80 px-5 py-4 text-base focus:outline-none focus:border-[#d4a017] transition-colors duration-300"
+                        style={{ fontFamily: "var(--font-montserrat)" }}>
+                        <option value="" className="bg-[#161616]">Select event type</option>
                         {EVENT_TYPES.map((type) => (
-                          <option key={type} value={type}>{type}</option>
+                          <option key={type} value={type} className="bg-[#161616]">{type}</option>
                         ))}
                       </select>
                     </div>
                   </div>
 
-                  {/* Date + Guests */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-xs tracking-[0.2em] uppercase text-[#faf7f0]/40 mb-2" style={{ fontFamily: "var(--font-montserrat)" }}>
-                        Event Date
-                      </label>
-                      <input
-                        type="date"
-                        name="eventDate"
-                        value={formData.eventDate}
-                        onChange={handleChange}
-                        className="w-full bg-[#161616] border border-[#d4a017]/20 text-[#faf7f0]/70 px-4 py-3 text-sm focus:outline-none focus:border-[#d4a017] transition-colors duration-300"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                      />
+                      <label className="block text-sm tracking-[0.15em] uppercase text-[#d4a017]/80 mb-3 font-medium" style={{ fontFamily: "var(--font-montserrat)" }}>Event Date</label>
+                      <input type="date" name="eventDate" value={formData.eventDate} onChange={handleChange}
+                        className="w-full bg-[#161616] border border-[#d4a017]/20 text-[#faf7f0]/80 px-5 py-4 text-base focus:outline-none focus:border-[#d4a017] transition-colors duration-300"
+                        style={{ fontFamily: "var(--font-montserrat)" }} />
                     </div>
                     <div>
-                      <label className="block text-xs tracking-[0.2em] uppercase text-[#faf7f0]/40 mb-2" style={{ fontFamily: "var(--font-montserrat)" }}>
-                        Approx. Guest Count
-                      </label>
-                      <input
-                        type="text"
-                        name="guestCount"
-                        value={formData.guestCount}
-                        onChange={handleChange}
-                        className="w-full bg-[#161616] border border-[#d4a017]/20 text-[#faf7f0] px-4 py-3 text-sm focus:outline-none focus:border-[#d4a017] transition-colors duration-300"
-                        style={{ fontFamily: "var(--font-montserrat)" }}
-                        placeholder="e.g. 100–200"
-                      />
+                      <label className="block text-sm tracking-[0.15em] uppercase text-[#d4a017]/80 mb-3 font-medium" style={{ fontFamily: "var(--font-montserrat)" }}>Guest Count</label>
+                      <input type="text" name="guestCount" value={formData.guestCount} onChange={handleChange}
+                        className="w-full bg-[#161616] border border-[#d4a017]/20 text-[#faf7f0] px-5 py-4 text-base focus:outline-none focus:border-[#d4a017] transition-colors duration-300"
+                        style={{ fontFamily: "var(--font-montserrat)" }} placeholder="e.g. 50, 100–200" />
                     </div>
                   </div>
 
-                  {/* Budget */}
-                  <div>
-                    <label className="block text-xs tracking-[0.2em] uppercase text-[#faf7f0]/40 mb-2" style={{ fontFamily: "var(--font-montserrat)" }}>
-                      Budget Range
-                    </label>
-                    <select
-                      name="budget"
-                      value={formData.budget}
-                      onChange={handleChange}
-                      className="w-full bg-[#161616] border border-[#d4a017]/20 text-[#faf7f0]/70 px-4 py-3 text-sm focus:outline-none focus:border-[#d4a017] transition-colors duration-300"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
-                    >
-                      <option value="">Select budget range</option>
-                      <option>Under ₹1 Lakh</option>
-                      <option>₹1 – ₹3 Lakhs</option>
-                      <option>₹3 – ₹5 Lakhs</option>
-                      <option>₹5 – ₹10 Lakhs</option>
-                      <option>₹10 Lakhs+</option>
-                    </select>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm tracking-[0.15em] uppercase text-[#d4a017]/80 mb-3 font-medium" style={{ fontFamily: "var(--font-montserrat)" }}>Venue</label>
+                      <input type="text" name="venue" value={formData.venue || ""} onChange={handleChange}
+                        className="w-full bg-[#161616] border border-[#d4a017]/20 text-[#faf7f0] px-5 py-4 text-base focus:outline-none focus:border-[#d4a017] transition-colors duration-300"
+                        style={{ fontFamily: "var(--font-montserrat)" }} placeholder="Venue name or location" />
+                    </div>
+                    <div>
+                      <div className="flex items-center justify-between mb-3 overflow-hidden">
+                        <label className="text-sm tracking-[0.15em] uppercase text-[#d4a017]/80 font-medium shrink-0" style={{ fontFamily: "var(--font-montserrat)" }}>Budget Range</label>
+                        <div className="ml-3 overflow-hidden flex-1">
+                          <div className="whitespace-nowrap text-[#C0C0C0] text-sm italic" style={{ fontFamily: "var(--font-cormorant)", animation: "marquee 12s linear infinite" }}>
+                            ✦ Budget varies depending on decor style, theme complexity & guest count &nbsp;&nbsp;&nbsp; ✦ Budget varies depending on decor style, theme complexity & guest count &nbsp;&nbsp;&nbsp;
+                          </div>
+                        </div>
+                      </div>
+                      <select name="budget" value={formData.budget} onChange={handleChange}
+                        className="w-full bg-[#161616] border border-[#d4a017]/20 text-[#faf7f0]/80 px-5 py-4 text-base focus:outline-none focus:border-[#d4a017] transition-colors duration-300"
+                        style={{ fontFamily: "var(--font-montserrat)" }}>
+                        <option value="" className="bg-[#161616]">Select budget range</option>
+                        <option className="bg-[#161616]">Under $500</option>
+                        <option className="bg-[#161616]">$500 – $1,000</option>
+                        <option className="bg-[#161616]">$1,000 – $2,500</option>
+                        <option className="bg-[#161616]">$2,500 – $5,000</option>
+                        <option className="bg-[#161616]">$5,000 – $10,000</option>
+                        <option className="bg-[#161616]">$10,000 – $20,000</option>
+                        <option className="bg-[#161616]">$20,000 – $50,000</option>
+                        <option className="bg-[#161616]">$50,000+</option>
+                        <option className="bg-[#161616]">Custom / Not Sure Yet</option>
+                      </select>
+                    </div>
                   </div>
 
-                  {/* Message */}
                   <div>
-                    <label className="block text-xs tracking-[0.2em] uppercase text-[#faf7f0]/40 mb-2" style={{ fontFamily: "var(--font-montserrat)" }}>
-                      Tell Us About Your Vision *
-                    </label>
-                    <textarea
-                      name="message"
-                      required
-                      rows={5}
-                      value={formData.message}
-                      onChange={handleChange}
+                    <label className="block text-sm tracking-[0.15em] uppercase text-[#d4a017]/80 mb-3 font-medium" style={{ fontFamily: "var(--font-montserrat)" }}>Tell Us About Your Vision *</label>
+                    <textarea name="message" required rows={6} value={formData.message} onChange={handleChange}
                       className="w-full bg-[#161616] border border-[#d4a017]/20 text-[#faf7f0] px-4 py-3 text-sm focus:outline-none focus:border-[#d4a017] transition-colors duration-300 resize-none"
                       style={{ fontFamily: "var(--font-montserrat)" }}
-                      placeholder="Describe your dream event — theme preferences, venue, mood, any specific ideas..."
-                    />
+                      placeholder="Describe your dream event — theme, venue, mood, specific ideas..." />
                   </div>
 
-                  <button
-                    type="submit"
-                    className="group w-full py-4 bg-[#d4a017] text-[#080808] text-sm tracking-[0.25em] uppercase font-medium hover:bg-[#f5d97e] transition-all duration-300 flex items-center justify-center gap-3"
-                    style={{ fontFamily: "var(--font-montserrat)" }}
-                  >
-                    Send Enquiry
-                    <Send size={14} className="group-hover:translate-x-1 transition-transform" />
+                  {error && (
+                    <p className="text-red-400 text-sm text-center" style={{ fontFamily: "var(--font-montserrat)" }}>{error}</p>
+                  )}
+
+                  <button type="submit" disabled={loading}
+                    className="group w-full py-4 bg-[#d4a017] text-[#080808] text-sm tracking-[0.25em] uppercase font-semibold hover:bg-[#f5d97e] transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
+                    style={{ fontFamily: "var(--font-montserrat)" }}>
+                    {loading ? (
+                      <><Loader2 size={16} className="animate-spin" /> Sending...</>
+                    ) : (
+                      <>Send Enquiry <Send size={16} className="group-hover:translate-x-1 transition-transform" /></>
+                    )}
                   </button>
 
                   <p className="text-[#faf7f0]/25 text-xs text-center" style={{ fontFamily: "var(--font-montserrat)" }}>
