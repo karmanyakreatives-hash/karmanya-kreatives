@@ -72,12 +72,7 @@ export default function Navbar() {
               >
                 KARMANYA KREATIVES
               </span>
-              <span
-                className="text-[8px] tracking-[0.45em] uppercase text-[#d4a017]/60 mt-1"
-                style={{ fontFamily: "var(--font-montserrat)" }}
-              >
-                ✦ Event Decor Management ✦
-              </span>
+              <div className="h-px mt-1" style={{ background: "linear-gradient(90deg, #d4a017, #f5d97e, #d4a017, transparent)" }} />
             </div>
           </Link>
 
