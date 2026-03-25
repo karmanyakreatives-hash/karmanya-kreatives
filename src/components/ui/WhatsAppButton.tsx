@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { X } from "lucide-react";
 
-const MESSAGE = encodeURIComponent("Hi! I'd like to enquire about event decor services at Karmanya Kreatives.");
+const MESSAGE = encodeURIComponent("Hello Karmanya Kreatives! I'm interested in your event decor services. Could you please share more details about your packages and availability?");
 
 const NUMBERS = [
   { label: "+1 (425) 469-0660", number: "14254690660" },
