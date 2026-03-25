@@ -64,24 +64,15 @@ export default function Navbar() {
           {/* Logo — right on mobile, left on desktop */}
           <Link href="/" className="leading-none group flex items-center gap-4 shrink-0 md:order-first">
             <motion.div
-              animate={{
-                scale: [1, 1.04, 1],
-                boxShadow: [
-                  "0 0 10px rgba(212,160,23,0.3)",
-                  "0 0 25px rgba(212,160,23,0.7)",
-                  "0 0 10px rgba(212,160,23,0.3)",
-                ],
-              }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              whileHover={{ scale: 1.1, rotate: 360, transition: { duration: 0.8 } }}
-              className="w-[90px] h-[90px] rounded-full border-2 border-[#d4a017] overflow-hidden shrink-0 bg-black flex items-center justify-center cursor-pointer"
+              whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
+              className="shrink-0 cursor-pointer"
             >
               <Image
                 src="/Logo_upscayl.png"
                 alt="Karmanya Kreatives Logo"
-                width={90}
-                height={90}
-                className="w-full h-full" style={{ objectFit: "cover", objectPosition: "40% 35%", transform: "scale(1.2)" }}
+                width={80}
+                height={80}
+                className="object-contain"
                 priority
               />
             </motion.div>
