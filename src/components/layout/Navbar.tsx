@@ -41,8 +41,17 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="leading-none group flex items-center gap-4">
+          {/* Mobile Menu Button (left on mobile, hidden on desktop) */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="md:hidden text-[#faf7f0] p-1"
+            aria-label="Toggle menu"
+          >
+            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+
+          {/* Logo — right on mobile, left on desktop */}
+          <Link href="/" className="leading-none group flex items-center gap-4 md:order-first">
             <motion.div
               animate={{
                 scale: [1, 1.04, 1],
@@ -109,15 +118,6 @@ export default function Navbar() {
               Book Now
             </Link>
           </nav>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden text-[#faf7f0] p-1"
-            aria-label="Toggle menu"
-          >
-            {menuOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
         </div>
       </motion.header>
 
