@@ -44,14 +44,25 @@ export default function Navbar() {
           {/* Mobile Menu Button (left on mobile, hidden on desktop) */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden text-[#faf7f0] p-1"
+            className="md:hidden text-[#faf7f0] p-1 shrink-0"
             aria-label="Toggle menu"
           >
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
 
+          {/* Brand name — center on mobile, hidden on desktop (shown inside logo link on desktop) */}
+          <div className="md:hidden flex flex-col items-center justify-center flex-1 px-2">
+            <span
+              className="text-lg font-semibold gold-shimmer uppercase leading-tight text-center"
+              style={{ fontFamily: "var(--font-cormorant)", letterSpacing: "0.18em" }}
+            >
+              KARMANYA KREATIVES
+            </span>
+            <div className="h-px w-full mt-1" style={{ background: "linear-gradient(90deg, #d4a017, #f5d97e, #d4a017, transparent)" }} />
+          </div>
+
           {/* Logo — right on mobile, left on desktop */}
-          <Link href="/" className="leading-none group flex items-center gap-4 ml-auto md:ml-0 md:order-first">
+          <Link href="/" className="leading-none group flex items-center gap-4 shrink-0 md:order-first">
             <motion.div
               animate={{
                 scale: [1, 1.04, 1],
