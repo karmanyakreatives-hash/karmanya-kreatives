@@ -50,8 +50,8 @@ export default function Navbar() {
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
 
-          {/* Logo — right on mobile, right on desktop */}
-          <Link href="/" className="leading-none group flex items-center gap-4 md:order-last">
+          {/* Logo — right on mobile, left on desktop */}
+          <Link href="/" className="leading-none group flex items-center gap-4 md:order-first">
             <motion.div
               animate={{
                 scale: [1, 1.04, 1],
