@@ -51,7 +51,7 @@ export default function Navbar() {
           </button>
 
           {/* Logo — right on mobile, left on desktop */}
-          <Link href="/" className="leading-none group flex items-center gap-4 md:order-first">
+          <Link href="/" className="leading-none group flex items-center gap-4 ml-auto md:ml-0 md:order-first">
             <motion.div
               animate={{
                 scale: [1, 1.04, 1],
@@ -74,7 +74,7 @@ export default function Navbar() {
                 priority
               />
             </motion.div>
-            <div className="flex flex-col justify-center">
+            <div className="hidden md:flex flex-col justify-center">
               <span
                 className="text-2xl md:text-3xl font-semibold gold-shimmer uppercase leading-tight"
                 style={{ fontFamily: "var(--font-cormorant)", letterSpacing: "0.18em" }}
