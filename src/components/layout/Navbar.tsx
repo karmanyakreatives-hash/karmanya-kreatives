@@ -53,12 +53,12 @@ export default function Navbar() {
           {/* Brand name — center on mobile, hidden on desktop (shown inside logo link on desktop) */}
           <div className="md:hidden flex flex-col items-center justify-center flex-1 px-2">
             <span
-              className="text-lg font-semibold gold-shimmer uppercase leading-tight text-center"
-              style={{ fontFamily: "var(--font-cormorant)", letterSpacing: "0.18em" }}
+              className="text-2xl font-bold gold-shimmer uppercase leading-tight text-center"
+              style={{ fontFamily: "var(--font-cormorant)", letterSpacing: "0.22em", textShadow: "0 0 20px rgba(212,160,23,0.4)" }}
             >
               KARMANYA KREATIVES
             </span>
-            <div className="h-px w-full mt-1" style={{ background: "linear-gradient(90deg, #d4a017, #f5d97e, #d4a017, transparent)" }} />
+            <div className="h-px w-full mt-1" style={{ background: "linear-gradient(90deg, transparent, #d4a017, #f5d97e, #d4a017, transparent)" }} />
           </div>
 
           {/* Logo — right on mobile, left on desktop */}
