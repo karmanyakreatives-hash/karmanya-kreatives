@@ -11,15 +11,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="leading-none mb-4 flex items-center gap-3">
-              <div className="w-[90px] h-[90px] rounded-full border-2 border-[#d4a017] overflow-hidden shrink-0 shadow-[0_0_15px_rgba(212,160,23,0.3)] bg-black flex items-center justify-center">
-                <Image
-                  src="/Logo_upscayl.png"
-                  alt="Karmanya Kreatives Logo"
-                  width={90}
-                  height={90}
-                  className="w-full h-full" style={{ objectFit: "cover", objectPosition: "40% 35%", transform: "scale(1.2)" }}
-                />
-              </div>
+              <Image
+                src="/Logo_upscayl.png"
+                alt="Karmanya Kreatives Logo"
+                width={90}
+                height={90}
+                className="object-contain shrink-0"
+              />
               <div className="flex flex-col items-start">
                 <span
                   className="text-3xl font-semibold tracking-[0.2em] gold-shimmer uppercase"
