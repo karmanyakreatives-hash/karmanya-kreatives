@@ -2,9 +2,14 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Check } from "lucide-react";
 import { fadeUp, fadeLeft, fadeRight, staggerContainer } from "@/lib/animations";
 import { SERVICES } from "@/lib/constants";
+
+const SERVICE_IMAGES: Record<string, string> = {
+  weddings: "/images/weddings/white-floral-wedding.jpg",
+};
 
 export default function ServicesPage() {
   return (
@@ -83,13 +88,24 @@ export default function ServicesPage() {
 
               {/* Visual */}
               <div className={`relative h-80 ${i % 2 === 1 ? "md:order-1" : ""}`}>
-                <div className="absolute inset-0 bg-[#161616] border border-[#d4a017]/15 flex items-center justify-center group hover:border-[#d4a017]/40 transition-all duration-300">
-                  <div className="text-center">
-                    <div className="text-6xl mb-4">{service.icon}</div>
-                    <p className="text-[#d4a017]/40 text-xs tracking-widest uppercase" style={{ fontFamily: "var(--font-montserrat)" }}>
-                      {service.title}
-                    </p>
+                <div className="absolute inset-0 bg-[#161616] border border-[#d4a017]/15 overflow-hidden group hover:border-[#d4a017]/40 transition-all duration-300">
+                  {SERVICE_IMAGES[service.id] ? (
+                    <Image
+                      src={SERVICE_IMAGES[service.id]}
+                      alt={service.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  ) : (
+                  <div className="flex items-center justify-center w-full h-full">
+                    <div className="text-center">
+                      <div className="text-6xl mb-4">{service.icon}</div>
+                      <p className="text-[#d4a017]/40 text-xs tracking-widest uppercase" style={{ fontFamily: "var(--font-montserrat)" }}>
+                        {service.title}
+                      </p>
+                    </div>
                   </div>
+                  )}
                 </div>
                 {i % 2 === 0 ? (
                   <div className="absolute -bottom-3 -right-3 w-full h-full border border-[#d4a017]/10 pointer-events-none" />
