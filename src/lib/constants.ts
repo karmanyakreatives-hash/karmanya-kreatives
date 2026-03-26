@@ -36,15 +36,6 @@ export const SERVICES = [
     features: ["Romantic Setups", "Memory Walls", "Floral Canopies", "Candlelight Arrangements", "Custom Signage", "Surprise Elements"],
   },
   {
-    id: "corporate",
-    title: "Corporate Events",
-    subtitle: "Impress & inspire",
-    description:
-      "Elevate your brand events, product launches, and galas with sophisticated decor that commands attention and reflects excellence.",
-    icon: "🏆",
-    features: ["Brand-aligned Decor", "Stage & Podium Design", "Lounge Setups", "Award Night Styling", "Product Launch Decor", "Gala Dinners"],
-  },
-  {
     id: "baby-showers",
     title: "Baby Showers",
     subtitle: "Welcome the little one",
