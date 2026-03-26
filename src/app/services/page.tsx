@@ -44,6 +44,7 @@ const SERVICE_IMAGES: Record<string, { src: string; position?: string }> = {
   weddings: { src: "/images/weddings/white-floral-wedding.jpg" },
   birthdays: { src: "/images/birthdays/animal-theme.jpg" },
   "baby-showers": { src: "/images/baby-shower/baby-shower.jpg" },
+  custom: { src: "/images/custom-events/custom-event.jpg" },
 };
 
 const SERVICE_VIDEOS: Record<string, string> = {
