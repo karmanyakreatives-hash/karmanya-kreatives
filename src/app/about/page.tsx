@@ -90,7 +90,7 @@ export default function AboutPage() {
                   <p className="text-[#faf7f0]/30 text-sm" style={{ fontFamily: "var(--font-cormorant)" }}>San Francisco Bay Area, CA</p>
                 </div>
               </div>
-              <div className="absolute -top-4 -right-4 w-full h-full border border-[#d4a017]/20 pointer-events-none" />
+              <div className="absolute -top-4 -right-4 w-full h-full border border-[#d4a017]/20 pointer-events-none hidden md:block" />
             </div>
           </motion.div>
         </div>

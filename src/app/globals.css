@@ -40,6 +40,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -47,7 +49,10 @@ body {
   color: var(--foreground);
   font-family: var(--font-cormorant), Georgia, serif;
   overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
   -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
 }
 
 /* Custom scrollbar */

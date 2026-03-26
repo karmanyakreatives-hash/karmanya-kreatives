@@ -151,9 +151,9 @@ export default function ServicesPage() {
                   )}
                 </div>
                 {i % 2 === 0 ? (
-                  <div className="absolute -bottom-3 -right-3 w-full h-full border border-[#d4a017]/10 pointer-events-none" />
+                  <div className="absolute -bottom-3 -right-3 w-full h-full border border-[#d4a017]/10 pointer-events-none hidden md:block" />
                 ) : (
-                  <div className="absolute -bottom-3 -left-3 w-full h-full border border-[#d4a017]/10 pointer-events-none" />
+                  <div className="absolute -bottom-3 -left-3 w-full h-full border border-[#d4a017]/10 pointer-events-none hidden md:block" />
                 )}
               </div>
             </motion.div>
