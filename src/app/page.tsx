@@ -166,7 +166,7 @@ export default function HomePage() {
             </h2>
             <p className="text-[#faf7f0]/50 leading-relaxed mb-4" style={{ fontFamily: "var(--font-montserrat)", fontSize: "0.9rem" }}>
               Karmanya Kreatives was born from a deep passion for transforming ordinary spaces
-              into extraordinary experiences. For over 8 years, we&apos;ve been the secret behind
+              into extraordinary experiences. For over 5 years, we&apos;ve been the secret behind
               Bay Area&apos;s most talked-about celebrations.
             </p>
             <p className="text-[#faf7f0]/50 leading-relaxed mb-8" style={{ fontFamily: "var(--font-montserrat)", fontSize: "0.9rem" }}>
