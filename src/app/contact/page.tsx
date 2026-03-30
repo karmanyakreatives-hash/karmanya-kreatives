@@ -61,25 +61,40 @@ export default function ContactPage() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="relative min-h-[55vh] flex items-center pb-16 pt-32 md:pt-52 overflow-hidden">
+      <section className="relative min-h-[50vh] flex items-center pt-36 md:pt-48 pb-6 overflow-hidden">
         <div className="absolute inset-0 bg-[#080808]">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_#1a1200_0%,_#080808_60%)]" />
           <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "linear-gradient(#d4a017 1px, transparent 1px), linear-gradient(90deg, #d4a017 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
+
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-16 lg:px-24 w-full text-center">
           <motion.div variants={staggerContainer} initial="hidden" animate="visible">
             <motion.p variants={fadeUp} className="text-[#d4a017] text-xs tracking-[0.4em] uppercase mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>
               Let&apos;s Begin
             </motion.p>
-            <motion.h1 variants={fadeUp} className="text-4xl md:text-8xl font-light text-[#faf7f0] leading-none" style={{ fontFamily: "var(--font-cormorant)" }}>
+            <motion.h1 variants={fadeUp} className="text-4xl md:text-8xl font-light text-[#faf7f0] leading-none mb-6" style={{ fontFamily: "var(--font-cormorant)" }}>
               Get in <span className="italic gold-text">Touch</span>
             </motion.h1>
           </motion.div>
         </div>
       </section>
 
+      {/* ── QUOTE BRIDGE ── */}
+      <div className="max-w-7xl mx-auto px-4 md:px-16 lg:px-24 pt-2 pb-6 text-center">
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="text-2xl md:text-4xl font-light italic text-[#faf7f0]/60"
+          style={{ fontFamily: "var(--font-cormorant)", letterSpacing: "0.05em" }}
+        >
+          &ldquo;Let&apos;s create something beautiful.&rdquo;
+        </motion.p>
+        <div className="mt-4 mx-auto w-24 h-px" style={{ background: "linear-gradient(90deg, transparent, #d4a017, transparent)" }} />
+      </div>
+
       {/* ── MAIN ── */}
-      <section className="section-padding">
+      <section className="py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 md:px-16 lg:px-24">
           <div className="grid md:grid-cols-5 gap-16">
             {/* Contact Info */}
@@ -88,15 +103,16 @@ export default function ContactPage() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="md:col-span-2 space-y-10"
+              className="md:col-span-2 space-y-10 md:pl-8"
             >
               <div>
-                <h2 className="text-3xl font-light text-[#faf7f0] mb-4" style={{ fontFamily: "var(--font-cormorant)" }}>
-                  Every great event
-                  <br /><span className="italic gold-text">starts with a call.</span>
+                <p className="text-[#d4a017]/80 text-xs tracking-[0.3em] uppercase mb-3" style={{ fontFamily: "var(--font-montserrat)" }}>Reach Out</p>
+                <h2 className="text-3xl md:text-4xl font-light text-[#faf7f0] leading-snug mb-4" style={{ fontFamily: "var(--font-cormorant)" }}>
+                  Share your vision,<br />
+                  <span className="italic gold-text">we&apos;ll do the rest.</span>
                 </h2>
                 <p className="text-[#faf7f0]/40 text-sm leading-relaxed" style={{ fontFamily: "var(--font-montserrat)" }}>
-                  Share your vision with us and we&apos;ll craft a bespoke proposal within 48 hours.
+                  We&apos;ll craft a bespoke proposal within 48 hours.<br />
                   Consultations are always complimentary.
                 </p>
               </div>
@@ -126,7 +142,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-[#faf7f0]/30 text-xs tracking-widest uppercase mb-1" style={{ fontFamily: "var(--font-montserrat)" }}>Location</p>
-                    <p className="text-[#faf7f0]/70 text-sm" style={{ fontFamily: "var(--font-montserrat)" }}>San Francisco Bay Area, CA</p>
+                    <p className="text-[#faf7f0]/70 text-sm" style={{ fontFamily: "var(--font-montserrat)" }}>Bay Area, CA</p>
                     <p className="text-[#faf7f0]/30 text-xs mt-1" style={{ fontFamily: "var(--font-montserrat)" }}>Serving the Bay Area & destination events</p>
                   </div>
                 </div>
@@ -136,22 +152,43 @@ export default function ContactPage() {
 
               <div>
                 <p className="text-[#faf7f0]/30 text-xs tracking-widest uppercase mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>Follow Us</p>
-                <div className="flex gap-3">
-                  <a href="#" className="w-10 h-10 border border-[#d4a017]/30 flex items-center justify-center text-[#d4a017]/60 hover:border-[#d4a017] hover:text-[#d4a017] transition-all duration-300" aria-label="Instagram">
-                    <Instagram size={14} />
-                  </a>
+                <div className="flex items-center gap-3">
+                <motion.a
+                  href="https://www.instagram.com/karmanyakreatives"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  whileHover="hover"
+                  initial="rest"
+                  animate="rest"
+                  className="group relative flex items-center gap-3 w-fit"
+                >
+                  {/* Pulsing glow ring */}
+                  <div className="relative">
+                    <motion.div
+                      className="absolute inset-0 rounded-none border border-[#d4a017]/40"
+                      animate={{ scale: [1, 1.4, 1], opacity: [0.4, 0, 0.4] }}
+                      transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+                    />
+                    <motion.div
+                      className="w-14 h-14 border border-[#d4a017]/30 flex items-center justify-center text-[#d4a017]/70 group-hover:border-[#d4a017] group-hover:text-[#d4a017] transition-all duration-300"
+                      whileHover={{ scale: 1.08 }}
+                    >
+                      <Instagram size={26} />
+                    </motion.div>
+                  </div>
+
+                </motion.a>
+                  <motion.span
+                    className="text-2xl"
+                    animate={{ x: [0, -6, 0] }}
+                    transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    👈
+                  </motion.span>
                 </div>
               </div>
 
-              {/* Hours */}
-              <div>
-                <p className="text-[#faf7f0]/30 text-xs tracking-widest uppercase mb-3" style={{ fontFamily: "var(--font-montserrat)" }}>Studio Hours</p>
-                <div className="space-y-1 text-sm text-[#faf7f0]/40" style={{ fontFamily: "var(--font-montserrat)" }}>
-                  <div className="flex justify-between"><span>Mon – Fri</span><span>10 AM – 7 PM</span></div>
-                  <div className="flex justify-between"><span>Saturday</span><span>11 AM – 5 PM</span></div>
-                  <div className="flex justify-between"><span>Sunday</span><span>By appointment</span></div>
-                </div>
-              </div>
             </motion.div>
 
             {/* Form */}
@@ -293,6 +330,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
     </>
   );
 }
