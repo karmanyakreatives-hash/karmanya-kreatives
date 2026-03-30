@@ -15,14 +15,14 @@ const VALUES = [
 ];
 
 const TEAM = [
-  { name: "HIMA BINDU", role: "Founder & Creative Director", bio: "The heart and soul behind Karmanya Kreatives. With a deep passion for design, florals, and celebrating life's most beautiful moments, Hima Bindu transforms every event into a breathtaking work of art — one detail at a time." },
+  { name: "HIMA BINDU MACHA", role: "Founder & Creative Director", bio: "The heart and soul behind Karmanya Kreatives. With a deep passion for design, florals, and celebrating life's most beautiful moments, Hima Bindu transforms every event into a breathtaking work of art — one detail at a time." },
 ];
 
 export default function AboutPage() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="relative min-h-[60vh] flex items-center pb-16 pt-52 overflow-hidden">
+      <section className="relative min-h-[60vh] flex items-center pb-16 pt-32 md:pt-52 overflow-hidden">
         <div className="absolute inset-0 bg-[#080808]">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_#1a1200_0%,_#080808_60%)]" />
           <div
@@ -33,12 +33,12 @@ export default function AboutPage() {
             }}
           />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 lg:px-24 w-full text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-16 lg:px-24 w-full text-center">
           <motion.div variants={staggerContainer} initial="hidden" animate="visible">
             <motion.p variants={fadeUp} className="text-[#d4a017] text-xs tracking-[0.4em] uppercase mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>
               Our Story
             </motion.p>
-            <motion.h1 variants={fadeUp} className="text-6xl md:text-8xl font-light text-[#faf7f0] leading-none" style={{ fontFamily: "var(--font-cormorant)" }}>
+            <motion.h1 variants={fadeUp} className="text-4xl md:text-8xl font-light text-[#faf7f0] leading-none" style={{ fontFamily: "var(--font-cormorant)" }}>
               About <span className="italic gold-text">Us</span>
             </motion.h1>
           </motion.div>
@@ -46,7 +46,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── STORY ── */}
-      <section className="section-padding max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
+      <section className="section-padding max-w-7xl mx-auto px-4 md:px-16 lg:px-24">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <motion.div variants={fadeLeft} initial="hidden" whileInView="visible" viewport={{ once: true }}>
             <h2 className="text-4xl md:text-5xl font-light text-[#faf7f0] leading-tight mb-12" style={{ fontFamily: "var(--font-cormorant)" }}>
@@ -122,7 +122,7 @@ export default function AboutPage() {
 
       {/* ── VALUES ── */}
       <section className="section-padding">
-        <div className="max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
+        <div className="max-w-7xl mx-auto px-4 md:px-16 lg:px-24">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-16">
             <p className="text-[#d4a017] text-xs tracking-[0.4em] uppercase mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>What Drives Us</p>
             <h2 className="text-5xl md:text-6xl font-light text-[#faf7f0]" style={{ fontFamily: "var(--font-cormorant)" }}>
@@ -154,7 +154,7 @@ export default function AboutPage() {
 
       {/* ── TEAM ── */}
       <section className="section-padding bg-[#0a0a0a]">
-        <div className="max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
+        <div className="max-w-7xl mx-auto px-4 md:px-16 lg:px-24">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-16">
             <p className="text-[#d4a017] text-xs tracking-[0.4em] uppercase mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>The Creative Behind It All</p>
             <h2 className="text-5xl md:text-6xl font-light text-[#faf7f0]" style={{ fontFamily: "var(--font-cormorant)" }}>

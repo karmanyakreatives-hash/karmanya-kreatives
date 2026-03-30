@@ -25,7 +25,11 @@
       "Bash(/opt/homebrew/bin/ffmpeg -y -i \"/Users/mybubu/Desktop/Karmanya Kreatives Website/public/images/anniversaries/anniversary.mov\" -vcodec libx264 -crf 35 -preset fast -vf \"scale=1280:-2\" -movflags +faststart -an \"/Users/mybubu/Desktop/Karmanya Kreatives Website/public/images/anniversaries/anniversary.mp4\")",
       "Bash(/opt/homebrew/bin/ffprobe -v quiet -show_entries format=duration -of csv=p=0 \"/Users/mybubu/Desktop/Karmanya Kreatives Website/public/images/anniversaries/anniversary.mov\")",
       "Bash(/opt/homebrew/bin/ffmpeg -y -i \"/Users/mybubu/Desktop/Karmanya Kreatives Website/public/images/anniversaries/anniversary.mov\" -vcodec libx264 -crf 40 -preset fast -vf \"scale=854:480,fps=24\" -movflags +faststart -an \"/Users/mybubu/Desktop/Karmanya Kreatives Website/public/images/anniversaries/anniversary.mp4\")",
-      "Bash(/opt/homebrew/bin/ffmpeg -y -i \"/Users/mybubu/Desktop/Karmanya Kreatives Website/public/images/custom-events/IMG_0953.MOV\" -vcodec libx264 -crf 40 -preset fast -vf \"scale=854:480,fps=24\" -movflags +faststart -an \"/Users/mybubu/Desktop/Karmanya Kreatives Website/public/images/custom-events/custom-events.mp4\")"
+      "Bash(/opt/homebrew/bin/ffmpeg -y -i \"/Users/mybubu/Desktop/Karmanya Kreatives Website/public/images/custom-events/IMG_0953.MOV\" -vcodec libx264 -crf 40 -preset fast -vf \"scale=854:480,fps=24\" -movflags +faststart -an \"/Users/mybubu/Desktop/Karmanya Kreatives Website/public/images/custom-events/custom-events.mp4\")",
+      "Bash(cd:*)",
+      "Bash(\"/Users/mybubu/Desktop/Karmanya Kreatives Website/.gitignore\")",
+      "Bash(ls:*)",
+      "Bash(curl:*)"
     ]
   }
 }

@@ -6,8 +6,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, ChevronDown, Star } from "lucide-react";
 import { fadeUp, fadeIn, staggerContainer, scaleIn, fadeLeft, fadeRight } from "@/lib/animations";
-import { STATS, SERVICES, TESTIMONIALS, THEMES } from "@/lib/constants";
+import { STATS, SERVICES, THEMES } from "@/lib/constants";
 import InstagramFeed from "@/components/sections/InstagramFeed";
+import GoogleReviews from "@/components/sections/GoogleReviews";
 
 export default function HomePage() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -52,19 +53,22 @@ export default function HomePage() {
           >
             <motion.span
               variants={fadeUp}
-              className="block text-6xl md:text-8xl lg:text-9xl font-light text-[#faf7f0] leading-none tracking-tight"
+              className="block text-4xl md:text-8xl lg:text-9xl font-light text-[#faf7f0]/70 leading-none tracking-widest uppercase"
+              style={{ letterSpacing: "0.15em" }}
             >
               We Craft
             </motion.span>
             <motion.span
               variants={fadeUp}
-              className="block text-6xl md:text-8xl lg:text-9xl font-light gold-shimmer leading-none tracking-tight italic"
+              className="block text-5xl md:text-9xl lg:text-[10rem] font-bold gold-shimmer leading-none italic"
+              style={{ letterSpacing: "-0.02em", textShadow: "0 0 60px rgba(212,160,23,0.3)" }}
             >
               Memories
             </motion.span>
             <motion.span
               variants={fadeUp}
-              className="block text-6xl md:text-8xl lg:text-9xl font-light text-[#faf7f0] leading-none tracking-tight"
+              className="block text-4xl md:text-8xl lg:text-9xl font-light text-[#faf7f0]/70 leading-none tracking-widest uppercase"
+              style={{ letterSpacing: "0.15em" }}
             >
               That Last
             </motion.span>
@@ -145,7 +149,7 @@ export default function HomePage() {
       </section>
 
       {/* ── ABOUT TEASER ───────────────────────────────────────── */}
-      <section className="section-padding max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
+      <section className="section-padding max-w-7xl mx-auto px-4 md:px-16 lg:px-24">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <motion.div
             variants={fadeLeft}
@@ -208,7 +212,7 @@ export default function HomePage() {
 
       {/* ── SERVICES PREVIEW ───────────────────────────────────── */}
       <section className="section-padding bg-[#0a0a0a]">
-        <div className="max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
+        <div className="max-w-7xl mx-auto px-4 md:px-16 lg:px-24">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-16">
             <p className="text-[#d4a017] text-xs tracking-[0.4em] uppercase mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>What We Do</p>
             <h2 className="text-5xl md:text-6xl font-light text-[#faf7f0]" style={{ fontFamily: "var(--font-cormorant)" }}>
@@ -258,7 +262,7 @@ export default function HomePage() {
 
       {/* ── THEMES PREVIEW ─────────────────────────────────────── */}
       <section className="section-padding">
-        <div className="max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
+        <div className="max-w-7xl mx-auto px-4 md:px-16 lg:px-24">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-16">
             <p className="text-[#d4a017] text-xs tracking-[0.4em] uppercase mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>Signature Collections</p>
             <h2 className="text-5xl md:text-6xl font-light text-[#faf7f0]" style={{ fontFamily: "var(--font-cormorant)" }}>
@@ -316,45 +320,7 @@ export default function HomePage() {
       </section>
 
       {/* ── TESTIMONIALS ───────────────────────────────────────── */}
-      <section className="section-padding bg-[#0a0a0a]">
-        <div className="max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
-          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-16">
-            <p className="text-[#d4a017] text-xs tracking-[0.4em] uppercase mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>Client Love</p>
-            <h2 className="text-5xl md:text-6xl font-light text-[#faf7f0]" style={{ fontFamily: "var(--font-cormorant)" }}>
-              What They <span className="italic gold-text">Say</span>
-            </h2>
-          </motion.div>
-
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-          >
-            {TESTIMONIALS.map((t, i) => (
-              <motion.div key={i} variants={fadeUp} className="p-8 border border-[#d4a017]/15 hover:border-[#d4a017]/30 transition-all duration-300">
-                <div className="text-6xl text-[#d4a017]/20 leading-none mb-4" style={{ fontFamily: "var(--font-cormorant)" }}>"</div>
-                <p className="text-[#faf7f0]/60 leading-relaxed mb-6 italic text-lg" style={{ fontFamily: "var(--font-cormorant)" }}>
-                  {t.quote}
-                </p>
-                <div className="gold-divider mb-4" />
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-[#faf7f0]/80 text-sm font-medium" style={{ fontFamily: "var(--font-montserrat)" }}>{t.name}</p>
-                    <p className="text-[#d4a017]/60 text-xs tracking-wider mt-0.5" style={{ fontFamily: "var(--font-montserrat)" }}>{t.event}</p>
-                  </div>
-                  <div className="flex gap-1">
-                    {Array.from({ length: t.rating }).map((_, j) => (
-                      <Star key={j} size={10} className="fill-[#d4a017] text-[#d4a017]" />
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+      <GoogleReviews />
 
       {/* ── INSTAGRAM FEED ─────────────────────────────────────── */}
       <InstagramFeed />

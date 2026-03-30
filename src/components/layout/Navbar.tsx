@@ -37,7 +37,7 @@ export default function Navbar() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
             ? "bg-[#080808]/95 backdrop-blur-md border-b border-[#d4a017]/20"
-            : "bg-transparent"
+            : "bg-transparent md:bg-transparent bg-[#080808]/95 backdrop-blur-md border-b border-[#d4a017]/20 md:border-b-0"
         }`}
       >
         {/* ── SCROLLED: single compact row ── */}
@@ -49,7 +49,7 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
-              className="hidden md:flex items-center justify-between max-w-7xl mx-auto px-8 md:px-16 lg:px-24 py-3"
+              className="hidden md:flex items-center justify-between max-w-7xl mx-auto px-4 md:px-16 lg:px-24 py-3"
             >
               {/* Logo + small brand */}
               <Link href="/" className="flex items-center gap-3 shrink-0">
@@ -115,7 +115,7 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="hidden md:block max-w-7xl mx-auto px-8 md:px-16 lg:px-24 pt-6 pb-3"
+              className="hidden md:block max-w-7xl mx-auto px-4 md:px-16 lg:px-24 pt-6 pb-3"
             >
               {/* Row 1: centered logo + brand */}
               <div className="flex flex-col items-center mb-3">
@@ -189,38 +189,59 @@ export default function Navbar() {
         </AnimatePresence>
 
         {/* ── MOBILE: single row ── */}
-        <div className="md:hidden flex items-center justify-between px-6 py-4">
+        <div className="md:hidden flex items-center justify-between px-4 py-1">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="text-[#faf7f0] p-1 shrink-0"
             aria-label="Toggle menu"
           >
-            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+            {menuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
 
-          <Link href="/" className="flex items-center gap-2 flex-1 justify-center px-2">
-            <Image
-              src="/Logo_upscayl.png"
-              alt="Karmanya Kreatives Logo"
-              width={40}
-              height={40}
-              className="object-contain shrink-0"
-            />
-            <div className="flex flex-col items-center">
-              <span
-                className="text-xl font-bold gold-shimmer uppercase leading-tight text-center"
-                style={{ fontFamily: "var(--font-cormorant)", letterSpacing: "0.22em" }}
-              >
-                KARMANYA KREATIVES
-              </span>
-              <div className="h-px w-full mt-1" style={{ background: "linear-gradient(90deg, transparent, #d4a017, #f5d97e, #d4a017, transparent)" }} />
-              <span
-                className="text-[10px] tracking-[0.3em] uppercase text-[#d4a017] mt-1 text-center"
-                style={{ fontFamily: "var(--font-montserrat)" }}
-              >
-                ✦ Event Decor Management ✦
-              </span>
+          <Link href="/" className="flex flex-col items-center flex-1 px-2">
+            {/* Logo + Name side by side */}
+            <div className="flex items-center gap-2">
+              <motion.div whileTap={{ scale: 0.95 }}>
+                <Image
+                  src="/Logo_upscayl.png"
+                  alt="Karmanya Kreatives Logo"
+                  width={72}
+                  height={72}
+                  className="object-contain shrink-0"
+                />
+              </motion.div>
+              <div className="flex flex-col">
+                <span
+                  className="text-4xl font-bold gold-shimmer uppercase leading-none"
+                  style={{
+                    fontFamily: "var(--font-cormorant)",
+                    letterSpacing: "0.15em",
+                    textShadow: "0 0 30px rgba(212,160,23,0.5)",
+                  }}
+                >
+                  KARMANYA
+                </span>
+                <span
+                  className="text-4xl font-bold gold-shimmer uppercase leading-none"
+                  style={{
+                    fontFamily: "var(--font-cormorant)",
+                    letterSpacing: "0.15em",
+                    textShadow: "0 0 30px rgba(212,160,23,0.5)",
+                  }}
+                >
+                  KREATIVES
+                </span>
+              </div>
             </div>
+            {/* Gold divider */}
+            <div className="w-full h-px my-1" style={{ background: "linear-gradient(90deg, transparent, #d4a017, #f5d97e, #d4a017, transparent)" }} />
+            {/* Tagline */}
+            <span
+              className="text-sm tracking-[0.25em] uppercase text-[#d4a017] text-center w-full"
+              style={{ fontFamily: "var(--font-montserrat)" }}
+            >
+              ✦ Event Decor Management ✦
+            </span>
           </Link>
 
           <div className="w-8" />

@@ -6,7 +6,7 @@ import { NAV_LINKS } from "@/lib/constants";
 export default function Footer() {
   return (
     <footer className="bg-[#0a0a0a] border-t border-[#d4a017]/20">
-      <div className="max-w-7xl mx-auto px-8 md:px-16 lg:px-24 pt-16 pb-8">
+      <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-24 pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="md:col-span-1">
@@ -20,7 +20,7 @@ export default function Footer() {
               />
               <div className="flex flex-col items-start">
                 <span
-                  className="text-3xl font-semibold tracking-[0.2em] gold-shimmer uppercase"
+                  className="text-xl md:text-3xl font-semibold tracking-[0.1em] md:tracking-[0.2em] gold-shimmer uppercase"
                   style={{ fontFamily: "var(--font-cormorant)" }}
                 >
                   KARMANYA KREATIVES
@@ -57,61 +57,66 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3
-              className="text-xs tracking-[0.3em] uppercase text-[#d4a017] mb-5"
-              style={{ fontFamily: "var(--font-montserrat)" }}
-            >
-              Navigation
-            </h3>
-            <ul className="space-y-3">
-              {NAV_LINKS.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-[#faf7f0]/50 hover:text-[#d4a017] text-sm transition-colors duration-300"
-                    style={{ fontFamily: "var(--font-montserrat)" }}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Navigation + Services side by side on mobile */}
+          <div className="md:contents">
+            <div className="flex justify-center gap-12 md:gap-0 md:contents">
+              {/* Quick Links */}
+              <div className="text-center md:text-left">
+                <h3
+                  className="text-xs tracking-[0.3em] uppercase text-[#d4a017] mb-5"
+                  style={{ fontFamily: "var(--font-montserrat)" }}
+                >
+                  Navigation
+                </h3>
+                <ul className="space-y-3">
+                  {NAV_LINKS.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="text-[#faf7f0]/50 hover:text-[#d4a017] text-sm transition-colors duration-300"
+                        style={{ fontFamily: "var(--font-montserrat)" }}
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-          {/* Services */}
-          <div>
-            <h3
-              className="text-xs tracking-[0.3em] uppercase text-[#d4a017] mb-5"
-              style={{ fontFamily: "var(--font-montserrat)" }}
-            >
-              Services
-            </h3>
-            <ul className="space-y-3">
-              {["Weddings", "Birthdays", "Anniversaries", "Baby Showers", "Custom Events"].map((s) => (
-                <li key={s}>
-                  <Link
-                    href="/services"
-                    className="text-[#faf7f0]/50 hover:text-[#d4a017] text-sm transition-colors duration-300"
-                    style={{ fontFamily: "var(--font-montserrat)" }}
-                  >
-                    {s}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+              {/* Services */}
+              <div className="text-center md:text-left">
+                <h3
+                  className="text-xs tracking-[0.3em] uppercase text-[#d4a017] mb-5"
+                  style={{ fontFamily: "var(--font-montserrat)" }}
+                >
+                  Services
+                </h3>
+                <ul className="space-y-3">
+                  {["Weddings", "Birthdays", "Anniversaries", "Baby Showers", "Custom Events"].map((s) => (
+                    <li key={s}>
+                      <Link
+                        href="/services"
+                        className="text-[#faf7f0]/50 hover:text-[#d4a017] text-sm transition-colors duration-300"
+                        style={{ fontFamily: "var(--font-montserrat)" }}
+                      >
+                        {s}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
 
           {/* Contact */}
-          <div>
+          <div className="text-center md:text-left -mt-6 md:mt-0">
             <h3
               className="text-xs tracking-[0.3em] uppercase text-[#d4a017] mb-5"
               style={{ fontFamily: "var(--font-montserrat)" }}
             >
               Get in Touch
             </h3>
-            <ul className="space-y-4">
+            <ul className="space-y-4 inline-block text-left">
               <li className="flex items-start gap-3">
                 <Phone size={14} className="text-[#d4a017] mt-0.5 shrink-0" />
                 <span
