@@ -56,7 +56,7 @@ export default function AboutPage() {
             <div className="space-y-6 leading-relaxed">
               <p className="text-[#faf7f0]/60 leading-relaxed" style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.2rem" }}>
                 <span className="text-[#d4a017] font-semibold gold-shimmer" style={{ fontSize: "1.2rem" }}>Karmanya Kreatives</span> was born from one simple belief — every celebration deserves to be extraordinary.
-                Since 2025, we&apos;ve been crafting the Bay Area&apos;s most breathtaking events, weaving together
+                Since 2020, we&apos;ve been crafting the Bay Area&apos;s most breathtaking events, weaving together
                 flowers, light, fabric, and the finest details into moments that truly take your breath away.
               </p>
               <p className="text-[#faf7f0]/60 leading-relaxed" style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.2rem" }}>

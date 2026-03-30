@@ -116,7 +116,7 @@ export const PORTFOLIO_ITEMS = [
 
 export const STATS = [
   { value: "250+", label: "Events Curated" },
-  { value: "2+", label: "Years of Excellence" },
+  { value: "5+", label: "Years of Excellence" },
   { value: "98%", label: "Client Satisfaction" },
   { value: "50+", label: "Signature Themes" },
 ];
