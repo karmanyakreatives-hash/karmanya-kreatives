@@ -145,7 +145,7 @@ export default function HomePage() {
       </section>
 
       {/* ── ABOUT TEASER ───────────────────────────────────────── */}
-      <section className="section-padding max-w-7xl mx-auto px-6">
+      <section className="section-padding max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <motion.div
             variants={fadeLeft}
@@ -208,7 +208,7 @@ export default function HomePage() {
 
       {/* ── SERVICES PREVIEW ───────────────────────────────────── */}
       <section className="section-padding bg-[#0a0a0a]">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-16">
             <p className="text-[#d4a017] text-xs tracking-[0.4em] uppercase mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>What We Do</p>
             <h2 className="text-5xl md:text-6xl font-light text-[#faf7f0]" style={{ fontFamily: "var(--font-cormorant)" }}>
@@ -258,7 +258,7 @@ export default function HomePage() {
 
       {/* ── THEMES PREVIEW ─────────────────────────────────────── */}
       <section className="section-padding">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-16">
             <p className="text-[#d4a017] text-xs tracking-[0.4em] uppercase mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>Signature Collections</p>
             <h2 className="text-5xl md:text-6xl font-light text-[#faf7f0]" style={{ fontFamily: "var(--font-cormorant)" }}>
@@ -317,7 +317,7 @@ export default function HomePage() {
 
       {/* ── TESTIMONIALS ───────────────────────────────────────── */}
       <section className="section-padding bg-[#0a0a0a]">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-16">
             <p className="text-[#d4a017] text-xs tracking-[0.4em] uppercase mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>Client Love</p>
             <h2 className="text-5xl md:text-6xl font-light text-[#faf7f0]" style={{ fontFamily: "var(--font-cormorant)" }}>

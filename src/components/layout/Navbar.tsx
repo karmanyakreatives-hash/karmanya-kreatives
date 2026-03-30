@@ -49,7 +49,7 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
-              className="hidden md:flex items-center justify-between max-w-7xl mx-auto px-6 py-3"
+              className="hidden md:flex items-center justify-between max-w-7xl mx-auto px-8 md:px-16 lg:px-24 py-3"
             >
               {/* Logo + small brand */}
               <Link href="/" className="flex items-center gap-3 shrink-0">
@@ -115,7 +115,7 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="hidden md:block max-w-7xl mx-auto px-6 pt-6 pb-3"
+              className="hidden md:block max-w-7xl mx-auto px-8 md:px-16 lg:px-24 pt-6 pb-3"
             >
               {/* Row 1: centered logo + brand */}
               <div className="flex flex-col items-center mb-3">

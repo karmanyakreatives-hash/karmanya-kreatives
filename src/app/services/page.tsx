@@ -40,27 +40,26 @@ function ServiceVideo({ src }: { src: string }) {
   );
 }
 
-const SERVICE_IMAGES: Record<string, { src: string; position?: string }> = {
+const SERVICE_IMAGES: Record<string, { src: string; position?: string; zoom?: string; contain?: boolean; secondary?: string }> = {
   weddings: { src: "/images/weddings/white-floral-wedding.jpg" },
   birthdays: { src: "/images/birthdays/animal-theme.jpg" },
+  anniversaries: { src: "/images/anniversaries/Couples.jpg", contain: true, position: "left center", secondary: "/images/anniversaries/Pratap&Co.jpg" },
   "baby-showers": { src: "/images/baby-shower/baby-shower.jpg" },
   custom: { src: "/images/custom-events/custom-event.jpg", position: "top" },
 };
 
-const SERVICE_VIDEOS: Record<string, string> = {
-  anniversaries: "/images/anniversaries/anniversary.mp4",
-};
+const SERVICE_VIDEOS: Record<string, string> = {};
 
 export default function ServicesPage() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="relative min-h-[60vh] flex items-end pb-16 pt-32 overflow-hidden">
+      <section className="relative min-h-[60vh] flex items-center pb-16 pt-52 overflow-hidden">
         <div className="absolute inset-0 bg-[#080808]">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_#1a1200_0%,_#080808_60%)]" />
           <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "linear-gradient(#d4a017 1px, transparent 1px), linear-gradient(90deg, #d4a017 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 lg:px-24 w-full text-center">
           <motion.div variants={staggerContainer} initial="hidden" animate="visible">
             <motion.p variants={fadeUp} className="text-[#d4a017] text-xs tracking-[0.4em] uppercase mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>
               What We Offer
@@ -83,7 +82,7 @@ export default function ServicesPage() {
 
       {/* ── SERVICES LIST ── */}
       <section className="pb-24">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
           {SERVICES.map((service, i) => (
             <motion.div
               key={service.id}
@@ -131,12 +130,32 @@ export default function ServicesPage() {
                 <div className="absolute inset-0 bg-[#161616] border border-[#d4a017]/15 overflow-hidden group hover:border-[#d4a017]/40 transition-all duration-300">
                   {SERVICE_VIDEOS[service.id] ? (
                     <ServiceVideo src={SERVICE_VIDEOS[service.id]} />
+                  ) : SERVICE_IMAGES[service.id]?.secondary ? (
+                    <div className="flex h-full gap-0">
+                      <div className="relative w-1/2 h-full">
+                        <Image
+                          src={SERVICE_IMAGES[service.id].src}
+                          alt={service.title}
+                          fill
+                          className="object-cover transition-transform duration-500"
+                          style={{ objectPosition: SERVICE_IMAGES[service.id].position ?? "center" }}
+                        />
+                      </div>
+                      <div className="relative w-1/2 h-full">
+                        <Image
+                          src={SERVICE_IMAGES[service.id].secondary!}
+                          alt={`${service.title} 2`}
+                          fill
+                          className="object-cover transition-transform duration-500"
+                        />
+                      </div>
+                    </div>
                   ) : SERVICE_IMAGES[service.id] ? (
                     <Image
                       src={SERVICE_IMAGES[service.id].src}
                       alt={service.title}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className={`${SERVICE_IMAGES[service.id].contain ? "object-contain" : "object-cover group-hover:scale-105"} transition-transform duration-500`}
                       style={{ objectPosition: SERVICE_IMAGES[service.id].position ?? "center" }}
                     />
                   ) : (

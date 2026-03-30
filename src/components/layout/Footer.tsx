@@ -6,7 +6,7 @@ import { NAV_LINKS } from "@/lib/constants";
 export default function Footer() {
   return (
     <footer className="bg-[#0a0a0a] border-t border-[#d4a017]/20">
-      <div className="max-w-7xl mx-auto px-6 pt-16 pb-8">
+      <div className="max-w-7xl mx-auto px-8 md:px-16 lg:px-24 pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="md:col-span-1">

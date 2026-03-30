@@ -28,12 +28,12 @@ export default function PortfolioPage() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="relative min-h-[60vh] flex items-end pb-16 pt-32 overflow-hidden">
+      <section className="relative min-h-[60vh] flex items-center pb-16 pt-52 overflow-hidden">
         <div className="absolute inset-0 bg-[#080808]">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_#1a1200_0%,_#080808_60%)]" />
           <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "linear-gradient(#d4a017 1px, transparent 1px), linear-gradient(90deg, #d4a017 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 lg:px-24 w-full text-center">
           <motion.div variants={staggerContainer} initial="hidden" animate="visible">
             <motion.p variants={fadeUp} className="text-[#d4a017] text-xs tracking-[0.4em] uppercase mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>
               Our Work
@@ -47,7 +47,7 @@ export default function PortfolioPage() {
 
       {/* ── FILTER BAR ── */}
       <section className="py-10 border-b border-[#d4a017]/10 bg-[#0a0a0a]">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -75,7 +75,7 @@ export default function PortfolioPage() {
 
       {/* ── GRID ── */}
       <section className="section-padding">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-8 md:px-16 lg:px-24">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeFilter}
