@@ -198,14 +198,29 @@ export default function Navbar() {
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
 
-          <Link href="/" className="flex flex-col items-center flex-1 px-2">
-            <span
-              className="text-2xl font-bold gold-shimmer uppercase leading-tight text-center"
-              style={{ fontFamily: "var(--font-cormorant)", letterSpacing: "0.22em" }}
-            >
-              KARMANYA KREATIVES
-            </span>
-            <div className="h-px w-full mt-1" style={{ background: "linear-gradient(90deg, transparent, #d4a017, #f5d97e, #d4a017, transparent)" }} />
+          <Link href="/" className="flex items-center gap-2 flex-1 justify-center px-2">
+            <Image
+              src="/Logo_upscayl.png"
+              alt="Karmanya Kreatives Logo"
+              width={40}
+              height={40}
+              className="object-contain shrink-0"
+            />
+            <div className="flex flex-col items-center">
+              <span
+                className="text-xl font-bold gold-shimmer uppercase leading-tight text-center"
+                style={{ fontFamily: "var(--font-cormorant)", letterSpacing: "0.22em" }}
+              >
+                KARMANYA KREATIVES
+              </span>
+              <div className="h-px w-full mt-1" style={{ background: "linear-gradient(90deg, transparent, #d4a017, #f5d97e, #d4a017, transparent)" }} />
+              <span
+                className="text-[10px] tracking-[0.3em] uppercase text-[#d4a017] mt-1 text-center"
+                style={{ fontFamily: "var(--font-montserrat)" }}
+              >
+                ✦ Event Decor Management ✦
+              </span>
+            </div>
           </Link>
 
           <div className="w-8" />

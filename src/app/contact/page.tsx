@@ -6,7 +6,7 @@ import { Phone, Mail, MapPin, Instagram, Send, Loader2 } from "lucide-react";
 import { fadeUp, fadeLeft, fadeRight, staggerContainer } from "@/lib/animations";
 import emailjs from "@emailjs/browser";
 
-const EVENT_TYPES = ["Wedding", "Birthday", "Anniversary", "Corporate Event", "Baby Shower", "Engagement", "Other"];
+const EVENT_TYPES = ["Wedding", "Birthday", "Anniversary", "Baby Shower", "Engagement", "Other"];
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({

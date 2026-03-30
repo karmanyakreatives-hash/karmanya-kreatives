@@ -7,13 +7,12 @@ import { ArrowRight } from "lucide-react";
 import { fadeUp, staggerContainer, scaleIn } from "@/lib/animations";
 import { PORTFOLIO_ITEMS } from "@/lib/constants";
 
-const CATEGORIES = ["All", "Wedding", "Birthday", "Anniversary", "Corporate", "Baby Shower", "Engagement"];
+const CATEGORIES = ["All", "Wedding", "Birthday", "Anniversary", "Baby Shower", "Engagement"];
 
 const EMOJI_MAP: Record<string, string> = {
   Wedding: "💍",
   Birthday: "🎂",
   Anniversary: "✨",
-  Corporate: "🏆",
   "Baby Shower": "🌸",
   Engagement: "💫",
 };

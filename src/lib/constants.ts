@@ -86,7 +86,7 @@ export const THEMES = [
     description: "Dramatic black, gold, and white contrast with geometric elements, metallic accents, and bold florals.",
     mood: "Bold · Dramatic · Chic",
     palette: ["#0a0a0a", "#D4A017", "#FFFFFF", "#C0C0C0"],
-    bestFor: ["Corporate Events", "Birthdays", "Award Nights"],
+    bestFor: ["Birthdays", "Award Nights", "Galas"],
   },
   {
     id: "blush-pearl",
@@ -110,12 +110,11 @@ export const PORTFOLIO_ITEMS = [
   { id: 1, title: "The Sharma Wedding", category: "Wedding", year: "2026", description: "A royal gold and ivory mandap draped in 10,000 roses." },
   { id: 2, title: "Little Aryan's 1st Birthday", category: "Birthday", year: "2026", description: "Dreamy cloud theme with balloon installations." },
   { id: 3, title: "25th Anniversary Gala", category: "Anniversary", year: "2026", description: "Intimate candlelit dinner for 200 guests." },
-  { id: 4, title: "TechCorp Product Launch", category: "Corporate", year: "2025", description: "Sleek noir glamour for a premium product reveal." },
   { id: 5, title: "Baby Zara's Shower", category: "Baby Shower", year: "2025", description: "Garden of Eden theme with floral arch." },
   { id: 6, title: "The Kapoor Wedding", category: "Wedding", year: "2026", description: "Midnight romance theme across 3 ceremonies." },
   { id: 7, title: "Priya's Sweet Sixteen", category: "Birthday", year: "2025", description: "Celestial dream with starry installations." },
   { id: 8, title: "Engagement Soiree", category: "Engagement", year: "2026", description: "Blush and pearl garden setup at sunset." },
-  { id: 9, title: "New Year Gala 2024", category: "Corporate", year: "2026", description: "Gold and black extravaganza for 500 guests." },
+  { id: 9, title: "New Year Gala 2024", category: "Engagement", year: "2026", description: "Gold and black extravaganza for 500 guests." },
 ];
 
 export const STATS = [

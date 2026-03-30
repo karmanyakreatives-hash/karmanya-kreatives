@@ -89,7 +89,7 @@ export default function Footer() {
               Services
             </h3>
             <ul className="space-y-3">
-              {["Weddings", "Birthdays", "Anniversaries", "Corporate Events", "Baby Showers", "Custom Events"].map((s) => (
+              {["Weddings", "Birthdays", "Anniversaries", "Baby Showers", "Custom Events"].map((s) => (
                 <li key={s}>
                   <Link
                     href="/services"
