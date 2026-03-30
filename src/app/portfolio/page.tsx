@@ -1,8 +1,9 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { fadeUp, staggerContainer, scaleIn } from "@/lib/animations";
 import { PORTFOLIO_ITEMS } from "@/lib/constants";
@@ -16,6 +17,53 @@ const EMOJI_MAP: Record<string, string> = {
   "Baby Shower": "🌸",
   Engagement: "💫",
 };
+
+function PortfolioImage({ item }: { item: (typeof PORTFOLIO_ITEMS)[number] }) {
+  const rec = item as Record<string, unknown>;
+  const images = Array.isArray(rec.images) ? rec.images as string[]
+    : typeof rec.image === "string" ? [rec.image]
+    : [];
+  const [idx, setIdx] = useState(0);
+
+  useEffect(() => {
+    if (images.length <= 1) return;
+    const t = setInterval(() => setIdx((i) => (i + 1) % images.length), 3000);
+    return () => clearInterval(t);
+  }, [images.length]);
+
+  return (
+    <div className="h-64 bg-[#161616] relative flex items-center justify-center overflow-hidden group">
+      {images.length > 0 ? (
+        <>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.8 }}
+              className="absolute inset-0"
+            >
+              <Image src={images[idx]} alt={item.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+            </motion.div>
+          </AnimatePresence>
+          {images.length > 1 && (
+            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+              {images.map((_, i) => (
+                <button key={i} onClick={() => setIdx(i)} className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${i === idx ? "bg-[#d4a017] w-3" : "bg-[#faf7f0]/40"}`} />
+              ))}
+            </div>
+          )}
+        </>
+      ) : (
+        <div className="text-6xl">{EMOJI_MAP[item.category] || "✨"}</div>
+      )}
+      <div className="absolute inset-0 bg-[#d4a017]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+      <div className="absolute top-4 left-4 px-3 py-1 bg-[#080808]/80 border border-[#d4a017]/30 text-[#d4a017] text-xs tracking-widest uppercase z-10" style={{ fontFamily: "var(--font-montserrat)" }}>{item.category}</div>
+      <div className="absolute top-4 right-4 text-[#faf7f0]/30 text-xs z-10" style={{ fontFamily: "var(--font-montserrat)" }}>{item.year}</div>
+    </div>
+  );
+}
 
 export default function PortfolioPage() {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -90,25 +138,8 @@ export default function PortfolioPage() {
                   variants={scaleIn}
                   className="group border border-[#d4a017]/15 hover:border-[#d4a017]/40 transition-all duration-500 overflow-hidden"
                 >
-                  {/* Image placeholder */}
-                  <div className="h-64 bg-[#161616] relative flex items-center justify-center overflow-hidden">
-                    <div className="text-6xl">{EMOJI_MAP[item.category] || "✨"}</div>
-                    {/* Hover overlay */}
-                    <div className="absolute inset-0 bg-[#d4a017]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    {/* Category badge */}
-                    <div
-                      className="absolute top-4 left-4 px-3 py-1 bg-[#080808]/80 border border-[#d4a017]/30 text-[#d4a017] text-xs tracking-widest uppercase"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
-                    >
-                      {item.category}
-                    </div>
-                    <div
-                      className="absolute top-4 right-4 text-[#faf7f0]/30 text-xs"
-                      style={{ fontFamily: "var(--font-montserrat)" }}
-                    >
-                      {item.year}
-                    </div>
-                  </div>
+                  {/* Image */}
+                  <PortfolioImage item={item} />
 
                   <div className="p-6">
                     <h3 className="text-xl font-light text-[#faf7f0] mb-2 group-hover:text-[#d4a017] transition-colors duration-300" style={{ fontFamily: "var(--font-cormorant)" }}>
