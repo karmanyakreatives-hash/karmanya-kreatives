@@ -26,7 +26,7 @@ export default function Footer() {
                   KARMANYA KREATIVES
                 </span>
                 <span
-                  className="text-[8px] tracking-[0.55em] uppercase text-[#d4a017]/60 mt-0.5 ml-0.5"
+                  className="text-xs tracking-[0.35em] uppercase text-[#d4a017] mt-1 ml-0.5"
                   style={{ fontFamily: "var(--font-montserrat)" }}
                 >
                   ✦ Event Decor Management ✦

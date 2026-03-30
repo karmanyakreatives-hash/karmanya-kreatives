@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, ChevronDown, Star } from "lucide-react";
 import { fadeUp, fadeIn, staggerContainer, scaleIn, fadeLeft, fadeRight } from "@/lib/animations";
 import { STATS, SERVICES, TESTIMONIALS, THEMES } from "@/lib/constants";
@@ -41,21 +42,6 @@ export default function HomePage() {
           style={{ opacity: heroOpacity }}
           className="relative z-10 text-center px-6 max-w-5xl mx-auto"
         >
-          <motion.div
-            variants={fadeIn}
-            initial="hidden"
-            animate="visible"
-            className="flex items-center justify-center gap-3 mb-8"
-          >
-            <div className="h-px w-12 bg-[#d4a017]/60" />
-            <span
-              className="text-[#d4a017] text-xs tracking-[0.4em] uppercase"
-              style={{ fontFamily: "var(--font-montserrat)" }}
-            >
-              Event Decor Management
-            </span>
-            <div className="h-px w-12 bg-[#d4a017]/60" />
-          </motion.div>
 
           <motion.h1
             variants={staggerContainer}
@@ -200,21 +186,21 @@ export default function HomePage() {
             viewport={{ once: true, margin: "-100px" }}
             className="relative"
           >
-            <div className="relative h-[480px]">
-              <div className="absolute top-0 left-0 w-3/4 h-3/4 bg-[#161616] border border-[#d4a017]/20 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-5xl mb-3">💍</div>
-                  <p className="text-[#d4a017]/60 text-xs tracking-widest uppercase" style={{ fontFamily: "var(--font-montserrat)" }}>Wedding Decor</p>
-                </div>
+            <div className="relative h-[520px]">
+              {/* Full height primary image */}
+              <div className="absolute inset-0 border border-[#d4a017]/20 overflow-hidden">
+                <Image
+                  src="/images/birthdays/WildOne.jpg"
+                  alt="Wild One Event"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-[#080808]/30" />
               </div>
-              <div className="absolute bottom-0 right-0 w-2/3 h-2/3 bg-[#1a1200] border border-[#d4a017]/30 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-5xl mb-3">✨</div>
-                  <p className="text-[#d4a017]/60 text-xs tracking-widest uppercase" style={{ fontFamily: "var(--font-montserrat)" }}>Luxury Events</p>
-                </div>
-              </div>
-              <div className="absolute top-0 right-0 w-12 h-12 border-t-2 border-r-2 border-[#d4a017]" />
-              <div className="absolute bottom-0 left-0 w-12 h-12 border-b-2 border-l-2 border-[#d4a017]" />
+
+              {/* Gold corner accents */}
+              <div className="absolute top-0 left-0 w-10 h-10 border-t-2 border-l-2 border-[#d4a017]" />
+              <div className="absolute top-0 right-0 w-10 h-10 border-t-2 border-r-2 border-[#d4a017]" />
             </div>
           </motion.div>
         </div>
