@@ -78,7 +78,7 @@ export default function RootLayout({
       addressCountry: "US",
     },
     areaServed: "San Francisco Bay Area, CA",
-    sameAs: ["https://www.instagram.com/karmanyakreatives"],
+    sameAs: ["https://www.instagram.com/karmanya_kreatives"],
     priceRange: "$$$",
     foundingDate: "2020",
   };

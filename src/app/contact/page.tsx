@@ -154,7 +154,7 @@ export default function ContactPage() {
                 <p className="text-[#faf7f0]/30 text-xs tracking-widest uppercase mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>Follow Us</p>
                 <div className="flex items-center gap-3">
                 <motion.a
-                  href="https://www.instagram.com/karmanyakreatives"
+                  href="https://www.instagram.com/karmanya_kreatives"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"

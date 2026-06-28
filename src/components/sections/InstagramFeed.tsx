@@ -39,14 +39,14 @@ export default function InstagramFeed() {
             Our <span className="italic gold-text">Instagram</span>
           </h2>
           <a
-            href="https://www.instagram.com/karmanyakreatives"
+            href="https://www.instagram.com/karmanya_kreatives"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-[#d4a017]/60 hover:text-[#d4a017] text-sm tracking-widest transition-colors duration-300"
             style={{ fontFamily: "var(--font-montserrat)" }}
           >
             <Instagram size={14} />
-            @karmanyakreatives
+            @karmanya_kreatives
           </a>
         </motion.div>
 
@@ -70,7 +70,7 @@ export default function InstagramFeed() {
           className="text-center mt-10"
         >
           <a
-            href="https://www.instagram.com/karmanyakreatives"
+            href="https://www.instagram.com/karmanya_kreatives"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 border border-[#d4a017]/50 text-[#d4a017] text-sm tracking-[0.2em] uppercase hover:bg-[#d4a017] hover:text-[#080808] transition-all duration-300"
