@@ -3,42 +3,9 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useRef } from "react";
-import { ArrowRight, Check, Volume2, VolumeX } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { fadeUp, fadeLeft, fadeRight, staggerContainer } from "@/lib/animations";
 import { SERVICES } from "@/lib/constants";
-
-function ServiceVideo({ src }: { src: string }) {
-  const [muted, setMuted] = useState(true);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  const toggleMute = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !muted;
-      setMuted(!muted);
-    }
-  };
-
-  return (
-    <div className="relative w-full h-full">
-      <video
-        ref={videoRef}
-        src={src}
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="w-full h-full object-cover"
-      />
-      <button
-        onClick={toggleMute}
-        className="absolute bottom-3 right-3 p-2 bg-[#080808]/70 border border-[#d4a017]/40 text-[#d4a017] hover:bg-[#d4a017] hover:text-[#080808] transition-all duration-300 rounded-full"
-      >
-        {muted ? <VolumeX size={16} /> : <Volume2 size={16} />}
-      </button>
-    </div>
-  );
-}
 
 const SERVICE_IMAGES: Record<string, { src: string; position?: string; zoom?: string; contain?: boolean; secondary?: string }> = {
   weddings: { src: "/images/weddings/white-floral-wedding.jpg" },
@@ -47,8 +14,6 @@ const SERVICE_IMAGES: Record<string, { src: string; position?: string; zoom?: st
   "baby-showers": { src: "/images/baby-shower/baby-shower.jpg" },
   custom: { src: "/images/custom-events/custom-event.jpg", position: "top" },
 };
-
-const SERVICE_VIDEOS: Record<string, string> = {};
 
 export default function ServicesPage() {
   return (
@@ -128,9 +93,7 @@ export default function ServicesPage() {
               {/* Visual */}
               <div className={`relative h-80 ${i % 2 === 1 ? "md:order-1" : ""}`}>
                 <div className="absolute inset-0 bg-[#161616] border border-[#d4a017]/15 overflow-hidden group hover:border-[#d4a017]/40 transition-all duration-300">
-                  {SERVICE_VIDEOS[service.id] ? (
-                    <ServiceVideo src={SERVICE_VIDEOS[service.id]} />
-                  ) : SERVICE_IMAGES[service.id]?.secondary ? (
+                  {SERVICE_IMAGES[service.id]?.secondary ? (
                     <div className="flex h-full gap-0">
                       <div className="relative w-1/2 h-full">
                         <Image

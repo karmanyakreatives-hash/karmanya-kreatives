@@ -165,7 +165,7 @@ export default function PortfolioPage() {
             <br /><span className="italic gold-text">Our Next Masterpiece</span>
           </h2>
           <p className="text-[#faf7f0]/40 max-w-md mx-auto mb-8 text-sm" style={{ fontFamily: "var(--font-montserrat)" }}>
-            Join 500+ happy clients who trusted us with their most special moments.
+            Join 250+ happy clients who trusted us with their most special moments.
           </p>
           <Link
             href="/contact"

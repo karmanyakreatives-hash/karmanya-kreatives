@@ -41,7 +41,9 @@ export default function Footer() {
             </p>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.instagram.com/karmanyakreatives"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-9 h-9 border border-[#d4a017]/30 flex items-center justify-center text-[#d4a017]/60 hover:border-[#d4a017] hover:text-[#d4a017] transition-all duration-300"
                 aria-label="Instagram"
               >

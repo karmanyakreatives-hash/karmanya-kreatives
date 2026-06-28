@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ChevronDown, Star } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { fadeUp, fadeIn, staggerContainer, scaleIn, fadeLeft, fadeRight } from "@/lib/animations";
 import { STATS, SERVICES, THEMES } from "@/lib/constants";
 import InstagramFeed from "@/components/sections/InstagramFeed";
@@ -132,10 +132,10 @@ export default function HomePage() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8"
+            className="flex flex-wrap justify-center gap-8 md:gap-16"
           >
             {STATS.map((stat) => (
-              <motion.div key={stat.label} variants={fadeUp} className="text-center">
+              <motion.div key={stat.label} variants={fadeUp} className="text-center w-36 md:w-40">
                 <div className="text-4xl md:text-5xl font-light gold-text mb-2" style={{ fontFamily: "var(--font-cormorant)" }}>
                   {stat.value}
                 </div>

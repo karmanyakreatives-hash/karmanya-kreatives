@@ -27,14 +27,30 @@ export const viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://karmanyakreatives.com"),
   title: "Karmanya Kreatives — Premium Event Decor",
   description:
     "Luxury event decor management for weddings, birthdays, anniversaries and all celebrations. We transform spaces into unforgettable experiences.",
-  keywords: ["event decor", "wedding decor", "luxury events", "birthday decor", "anniversary decor", "Karmanya Kreatives"],
+  keywords: ["event decor", "wedding decor", "luxury events", "birthday decor", "anniversary decor", "Karmanya Kreatives", "Bay Area event decor", "San Francisco event decor"],
   openGraph: {
     title: "Karmanya Kreatives — Premium Event Decor",
-    description: "Luxury event decor for unforgettable celebrations.",
+    description: "Luxury event decor for unforgettable celebrations in the Bay Area.",
     type: "website",
+    url: "https://karmanyakreatives.com",
+    images: [
+      {
+        url: "/Logo_upscayl.png",
+        width: 800,
+        height: 800,
+        alt: "Karmanya Kreatives — Premium Event Decor",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Karmanya Kreatives — Premium Event Decor",
+    description: "Luxury event decor for unforgettable celebrations in the Bay Area.",
+    images: ["/Logo_upscayl.png"],
   },
 };
 
@@ -43,8 +59,36 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Karmanya Kreatives",
+    description: "Luxury event decor management for weddings, birthdays, anniversaries and all celebrations.",
+    url: "https://karmanyakreatives.com",
+    logo: "https://karmanyakreatives.com/Logo_upscayl.png",
+    image: "https://karmanyakreatives.com/Logo_upscayl.png",
+    telephone: ["+14254690660", "+15714214321"],
+    email: "karmanyakreatives@gmail.com",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "San Francisco",
+      addressRegion: "CA",
+      addressCountry: "US",
+    },
+    areaServed: "San Francisco Bay Area, CA",
+    sameAs: ["https://www.instagram.com/karmanyakreatives"],
+    priceRange: "$$$",
+    foundingDate: "2020",
+  };
+
   return (
     <html lang="en" className={`${cormorant.variable} ${montserrat.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="grain bg-[#080808] text-[#faf7f0] antialiased">
         <Navbar />
         <main>{children}</main>
