@@ -260,6 +260,44 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── HOW IT WORKS ───────────────────────────────────────── */}
+      <section className="section-padding bg-[#0a0a0a]">
+        <div className="max-w-7xl mx-auto px-4 md:px-16 lg:px-24">
+          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center mb-16">
+            <p className="text-[#d4a017] text-xs tracking-[0.4em] uppercase mb-4" style={{ fontFamily: "var(--font-montserrat)" }}>The Process</p>
+            <h2 className="text-5xl md:text-6xl font-light text-[#faf7f0]" style={{ fontFamily: "var(--font-cormorant)" }}>
+              How It <span className="italic gold-text">Works</span>
+            </h2>
+          </motion.div>
+
+          <div className="relative">
+            <div className="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-px" style={{ background: "linear-gradient(90deg, transparent, #d4a017, #f5d97e, #d4a017, transparent)" }} />
+            <motion.div
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="grid grid-cols-1 md:grid-cols-4 gap-10"
+            >
+              {[
+                { step: "01", title: "Consultation", desc: "Share your vision in a free call. We listen, advise, and align with your dream." },
+                { step: "02", title: "Design", desc: "We craft a bespoke concept — moodboards, layouts, palette — tailored to you." },
+                { step: "03", title: "Execution", desc: "Our team transforms your venue on the day, handling every last detail." },
+                { step: "04", title: "Celebrate", desc: "Be fully present in your moment. We manage setup and clean up after." },
+              ].map((item) => (
+                <motion.div key={item.step} variants={fadeUp} className="text-center">
+                  <div className="w-16 h-16 border border-[#d4a017]/40 flex items-center justify-center mx-auto mb-6 bg-[#0a0a0a] relative z-10">
+                    <span className="text-2xl gold-text font-light" style={{ fontFamily: "var(--font-cormorant)" }}>{item.step}</span>
+                  </div>
+                  <h3 className="text-xl font-light text-[#faf7f0] mb-3" style={{ fontFamily: "var(--font-cormorant)" }}>{item.title}</h3>
+                  <p className="text-[#faf7f0]/40 text-sm leading-relaxed" style={{ fontFamily: "var(--font-montserrat)" }}>{item.desc}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* ── THEMES PREVIEW ─────────────────────────────────────── */}
       <section className="section-padding">
         <div className="max-w-7xl mx-auto px-4 md:px-16 lg:px-24">

@@ -4,9 +4,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Expand } from "lucide-react";
 import { fadeUp, staggerContainer, scaleIn } from "@/lib/animations";
 import { PORTFOLIO_ITEMS } from "@/lib/constants";
+import Lightbox from "@/components/ui/Lightbox";
 
 const CATEGORIES = ["All", "Wedding", "Birthday", "Anniversary", "Baby Shower", "Engagement"];
 
@@ -65,12 +66,23 @@ function PortfolioImage({ item }: { item: (typeof PORTFOLIO_ITEMS)[number] }) {
   );
 }
 
+type LightboxState = { item: (typeof PORTFOLIO_ITEMS)[0]; imgIdx: number } | null;
+
 export default function PortfolioPage() {
   const [activeFilter, setActiveFilter] = useState("All");
+  const [lightbox, setLightbox] = useState<LightboxState>(null);
 
   const filtered = activeFilter === "All"
     ? PORTFOLIO_ITEMS
     : PORTFOLIO_ITEMS.filter((item) => item.category === activeFilter);
+
+  const openLightbox = (item: (typeof PORTFOLIO_ITEMS)[0], imgIdx = 0) =>
+    setLightbox({ item, imgIdx });
+  const closeLightbox = () => setLightbox(null);
+  const prevImage = () =>
+    setLightbox((l) => l ? { ...l, imgIdx: (l.imgIdx - 1 + l.item.images.length) % l.item.images.length } : null);
+  const nextImage = () =>
+    setLightbox((l) => l ? { ...l, imgIdx: (l.imgIdx + 1) % l.item.images.length } : null);
 
   return (
     <>
@@ -136,10 +148,18 @@ export default function PortfolioPage() {
                 <motion.div
                   key={item.id}
                   variants={scaleIn}
-                  className="group border border-[#d4a017]/15 hover:border-[#d4a017]/40 transition-all duration-500 overflow-hidden"
+                  className="group border border-[#d4a017]/15 hover:border-[#d4a017]/40 transition-all duration-500 overflow-hidden cursor-pointer"
+                  onClick={() => openLightbox(item, 0)}
                 >
                   {/* Image */}
-                  <PortfolioImage item={item} />
+                  <div className="relative">
+                    <PortfolioImage item={item} />
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                      <div className="w-12 h-12 bg-[#080808]/70 border border-[#d4a017]/60 flex items-center justify-center">
+                        <Expand size={18} className="text-[#d4a017]" />
+                      </div>
+                    </div>
+                  </div>
 
                   <div className="p-6">
                     <h3 className="text-xl font-light text-[#faf7f0] mb-2 group-hover:text-[#d4a017] transition-colors duration-300" style={{ fontFamily: "var(--font-cormorant)" }}>
@@ -155,6 +175,20 @@ export default function PortfolioPage() {
           </AnimatePresence>
         </div>
       </section>
+
+      {/* ── LIGHTBOX ── */}
+      <AnimatePresence>
+        {lightbox && (
+          <Lightbox
+            images={lightbox.item.images}
+            currentIndex={lightbox.imgIdx}
+            title={lightbox.item.title}
+            onClose={closeLightbox}
+            onPrev={prevImage}
+            onNext={nextImage}
+          />
+        )}
+      </AnimatePresence>
 
       {/* ── CTA ── */}
       <section className="py-24 text-center px-6 relative">
