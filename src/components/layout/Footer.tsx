@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="md:col-span-1">
             <div className="leading-none mb-4 flex items-center gap-3">
               <Image
-                src="/Logo_upscayl.png"
+                src="/Logo_.png"
                 alt="Karmanya Kreatives Logo"
                 width={90}
                 height={90}

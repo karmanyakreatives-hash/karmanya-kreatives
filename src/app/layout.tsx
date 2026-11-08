@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     url: "https://karmanyakreatives.com",
     images: [
       {
-        url: "/Logo_upscayl.png",
+        url: "/Logo_.png",
         width: 800,
         height: 800,
         alt: "Karmanya Kreatives — Premium Event Decor",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Karmanya Kreatives — Premium Event Decor",
     description: "Luxury event decor for unforgettable celebrations in the Bay Area.",
-    images: ["/Logo_upscayl.png"],
+    images: ["/Logo_.png"],
   },
 };
 
@@ -67,8 +67,8 @@ export default function RootLayout({
     name: "Karmanya Kreatives",
     description: "Luxury event decor management for weddings, birthdays, anniversaries and all celebrations.",
     url: "https://karmanyakreatives.com",
-    logo: "https://karmanyakreatives.com/Logo_upscayl.png",
-    image: "https://karmanyakreatives.com/Logo_upscayl.png",
+    logo: "https://karmanyakreatives.com/Logo_.png",
+    image: "https://karmanyakreatives.com/Logo_.png",
     telephone: ["+14254690660", "+15714214321"],
     email: "karmanyakreatives@gmail.com",
     address: {

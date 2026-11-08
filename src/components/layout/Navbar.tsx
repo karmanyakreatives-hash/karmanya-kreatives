@@ -54,7 +54,7 @@ export default function Navbar() {
               {/* Logo + small brand */}
               <Link href="/" className="flex items-center gap-3 shrink-0">
                 <Image
-                  src="/Logo_upscayl.png"
+                  src="/Logo_.png"
                   alt="Karmanya Kreatives Logo"
                   width={44}
                   height={44}
@@ -117,32 +117,32 @@ export default function Navbar() {
               transition={{ duration: 0.3 }}
               className="hidden md:block max-w-7xl mx-auto px-4 md:px-16 lg:px-24 pt-6 pb-3"
             >
-              {/* Row 1: centered logo + brand */}
+              {/* Row 1: logo stacked above brand, fully centered */}
               <div className="flex flex-col items-center mb-3">
                 <Link href="/" className="flex items-center gap-4 group">
                   <motion.div whileHover={{ scale: 1.08, transition: { duration: 0.3 } }}>
                     <Image
-                      src="/Logo_upscayl.png"
+                      src="/Logo_.png"
                       alt="Karmanya Kreatives Logo"
-                      width={80}
-                      height={80}
+                      width={90}
+                      height={90}
                       className="object-contain"
                       priority
                     />
                   </motion.div>
-                  <div className="flex flex-col justify-center">
+                  <div className="flex flex-col items-center">
                     <span
-                      className="text-4xl font-semibold gold-shimmer uppercase leading-tight"
+                      className="text-6xl font-semibold gold-shimmer uppercase leading-tight text-center"
                       style={{ fontFamily: "var(--font-cormorant)", letterSpacing: "0.18em" }}
                     >
                       KARMANYA KREATIVES
                     </span>
                     <div
-                      className="h-px mt-1"
+                      className="h-px mt-1 w-full"
                       style={{ background: "linear-gradient(90deg, transparent, #d4a017, #f5d97e, #d4a017, transparent)" }}
                     />
                     <span
-                      className="text-sm tracking-[0.35em] uppercase text-[#d4a017] mt-1 text-center"
+                      className="text-base tracking-[0.4em] uppercase text-[#d4a017] mt-1 mb-2 text-center"
                       style={{ fontFamily: "var(--font-montserrat)" }}
                     >
                       ✦ Event Decor Management ✦
@@ -152,7 +152,7 @@ export default function Navbar() {
               </div>
 
               {/* Row 2: centered nav links */}
-              <nav className="flex items-center justify-center gap-8">
+              <nav className="flex items-center justify-evenly w-full pb-1">
                 {NAV_LINKS.map((link) => (
                   <Link
                     key={link.href}
@@ -203,7 +203,7 @@ export default function Navbar() {
             <div className="flex items-center gap-2">
               <motion.div whileTap={{ scale: 0.95 }}>
                 <Image
-                  src="/Logo_upscayl.png"
+                  src="/Logo_.png"
                   alt="Karmanya Kreatives Logo"
                   width={72}
                   height={72}

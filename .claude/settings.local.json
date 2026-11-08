@@ -29,7 +29,19 @@
       "Bash(cd:*)",
       "Bash(\"/Users/mybubu/Desktop/Karmanya Kreatives Website/.gitignore\")",
       "Bash(ls:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(npm run:*)",
+      "Bash(npm install:*)",
+      "Bash(python3 -c \"import json; d=json.load\\(open\\(''/Users/mybubu/Desktop/Karmanya Kreatives Website/public/phone-animation.json''\\)\\); print\\(d.get\\(''nm'',''?''\\), d.get\\(''w''\\), d.get\\(''h''\\)\\)\")",
+      "Bash(convert --version)",
+      "Bash(# Copy 32x32 as favicon.ico \\(browsers accept PNG inside .ico container\\)\ncp /tmp/favicon_32.png \"/Users/mybubu/Desktop/Karmanya Kreatives Website/src/app/favicon.ico\"\n\n# Also update icon.png with a cleaner 512x512 version\nsips -z 512 512 \"/Users/mybubu/Desktop/Karmanya Kreatives Website/public/Logo_upscayl.png\" --out \"/Users/mybubu/Desktop/Karmanya Kreatives Website/src/app/icon.png\"\n\necho \"Done\")",
+      "Skill(run)",
+      "Bash(open *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(git config *)",
+      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --screenshot=\"/tmp/kk-screenshot.png\" --window-size=1440,900 --no-sandbox http://localhost:3000)"
     ]
   }
 }

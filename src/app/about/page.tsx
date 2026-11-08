@@ -79,7 +79,7 @@ export default function AboutPage() {
                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                   >
                     <Image
-                      src="/Logo_upscayl.png"
+                      src="/Logo_.png"
                       alt="Karmanya Kreatives Logo"
                       width={300}
                       height={300}
